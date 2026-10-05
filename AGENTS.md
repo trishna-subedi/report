@@ -44,6 +44,23 @@ The project source code being described lives outside this repository, at
 `0ee0ebd`). **Do not re-read it to answer a question** — `docs/project_detail/` already records
 everything needed, including what is *not* in the project and what remains uncertain.
 
+### What we are writing, and what already exists
+
+**The front matter is already written.** It exists as the approved draft at
+`data/documents/front.pdf` (5 pages: cover and title page, Supervisor's Recommendation, Letter of
+Approval, Student's Declaration, Acknowledgement), and `data/information/front_matter.md` lists the
+signatories. Together they are the source of truth for all front matter wording.
+
+Therefore **the work in `src/sections/` is the main contents — Chapters 1 to 4 — plus the
+Appendices.** The files in `src/sections/front-matter/` exist for one reason only: the guideline
+requires those pages in the submitted PDF, so they are a *verbatim transcription* of `front.pdf`.
+Do not rewrite them, extend them, improve them, or invent any new front matter content. The only
+two exceptions are flagged as missing: the Mentor's Recommendation from the Company (required by
+the guideline, absent from `front.pdf`) and the Abstract, which the source itself defers until the
+chapters are finished.
+
+In short: **front matter = already done, transcribe only. Chapters and appendices = the work.**
+
 ---
 
 ## 2. Golden rules

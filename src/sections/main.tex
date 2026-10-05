@@ -14,9 +14,14 @@
 
 % ---------------------------------------------------------------------
 % 1. Fonts — Times New Roman (real system font, XeLaTeX)
+%    unicode-math gives Times-compatible maths. Without it the maths used
+%    in the architecture diagram pulls in Computer Modern (CMSY/CMEX) and the
+%    guideline's "Times New Roman only" requirement is broken.
 % ---------------------------------------------------------------------
 \usepackage{fontspec}
 \setmainfont{Times New Roman}
+\usepackage{unicode-math}
+\setmathfont{TeX Gyre Termes Math}
 
 % ---------------------------------------------------------------------
 % 2. Page geometry — A4, top 1in, bottom 1in, right 1in, left 1.25in
@@ -96,6 +101,7 @@
 % ---------------------------------------------------------------------
 % 8. Source code listings for the appendices
 % ---------------------------------------------------------------------
+\usepackage{xcolor}
 \usepackage{listings}
 \lstset{
   basicstyle=\ttfamily\small,

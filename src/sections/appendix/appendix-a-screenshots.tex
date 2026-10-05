@@ -1,0 +1,56 @@
+﻿% =====================================================================
+%  Appendix A â€” Application User Interface Screens
+% =====================================================================
+\chapter{Application User Interface Screens}
+\label{app:screenshots}
+
+This appendix provides a visual catalog and functional overview of the primary user interface screens developed for the Alcedo mobile application. The interface was engineered using React Native and Expo, styled with centralized design tokens, and structured across five core navigation tabs.
+
+\section{Core Application Interface Overview}
+The Alcedo mobile client delivers a unified user experience structured around three primary interactive workflows: the Home Dashboard, the Live Workout Execution flow, and the Performance Analytics interface. Figure~\ref{fig:app-screens-appendix} displays these core screens in dark display mode.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=5.5in]{screen.png}
+    \caption{Alcedo Core Application Screens: Home Dashboard, Live Session Execution, and Performance Analytics}
+    \label{fig:app-screens-appendix}
+\end{figure}
+
+\section{Detailed Screen Walkthrough}
+The application interface encompasses twenty-four primary functional screens organized across five main navigation tabs:
+
+\subsection{Workout Hub and Session Tracking}
+\begin{itemize}
+    \item \textbf{Home Dashboard (\textit{(session)/index}):} Serves as the primary landing interface upon application launch. It displays the member's active workout streak, weekly training frequency summary, quick-start session launcher, and immediate access to assigned routine blueprints.
+    \item \textbf{Live Workout Execution (\textit{(session)/session/index}):} The active workout interface used during gym training. It provides set-by-set recording with real-time numeric inputs for weight (kg/lb) and repetitions, set-type toggles (warmup, normal, drop set, failure set), an automated rest timer countdown dialog, exercise replacement menus, and live superset groupings.
+    \item \textbf{Post-Workout Summary (\textit{(session)/session/post}):} Displays immediate session metrics upon workout completion, including total lifted tonnage, total completed sets and repetitions, workout duration, and personal record (PR) celebration badges.
+    \item \textbf{Workout Blueprint Editor (\textit{workout-editor}):} Provides an interface for constructing customized multi-week training programs, configuring target exercises, prescribing set rep ranges, and setting rest intervals.
+    \item \textbf{Plan Diff-Save Reconciliation (\textit{diff-save}):} A specialized visual reconciliation modal that displays side-by-side differences when modifying existing routines, allowing members to review added, altered, or removed exercises before committing updates to local storage.
+\end{itemize}
+
+\subsection{Exercise Library and Catalog Navigation}
+\begin{itemize}
+    \item \textbf{Exercise Search and Filtering (\textit{exercise-search}):} An interactive search catalog enabling members to browse verified exercises categorized by target muscle groups (e.g., chest, back, quadriceps, shoulders) and required equipment (barbell, dumbbell, cable, machine, bodyweight).
+    \item \textbf{Exercise Detail and History (\textit{exercise-history}):} Displays exercise execution guidance, target biomechanical movement notes, and longitudinal historical logs of past weights and repetitions performed for that specific movement.
+    \item \textbf{Custom Exercise Creator (\textit{exercise-editor}):} Allows members and trainers to register custom gym exercises, assign anatomical classifications, and configure tracking modes.
+\end{itemize}
+
+\subsection{Historical Tracking and Calendar}
+\begin{itemize}
+    \item \textbf{Training Calendar (\textit{history/index}):} Provides an interactive monthly calendar matrix marking workout completion days with visual activity indicators, paired with a chronological list of completed workouts grouped by week.
+    \item \textbf{Historical Session Editor (\textit{history/edit}):} Enables retroactive inspection and editing of completed workout sessions, allowing members to adjust set logs, correct typos, or append post-session notes.
+\end{itemize}
+
+\subsection{Performance Analytics and Strength Trends}
+\begin{itemize}
+    \item \textbf{Trends Dashboard (\textit{stats/index}):} Visualizes training volume trends over monthly and annual horizons using interactive frequency heatmaps and aggregate tonnage charts.
+    \item \textbf{Exercise Progression Curves (\textit{stats/expanded-weighted}):} Plots estimated one-rep maximum (1RM) progression curves, workload distribution charts across major muscle groups, and personal achievement milestones.
+\end{itemize}
+
+\subsection{User Settings and Application Configuration}
+\begin{itemize}
+    \item \textbf{Settings Hub (\textit{settings/index}):} Centralized configuration portal for user account profile management, display preferences, and hardware diagnostics.
+    \item \textbf{Display Theming (\textit{settings/preferences}):} Enables seamless dynamic theme switching between Light Theme, Dark Theme, and high-contrast true-black OLED mode, alongside sound alerts and measurement unit toggles (Metric vs. Imperial).
+    \item \textbf{Local Backup and Export (\textit{settings/backup-and-restore}):} Provides client-side data sovereignty tools, including full database JSON exports, backup restoration, and plaintext summary sharing.
+    \item \textbf{Backend Diagnostics (\textit{settings/backends/index}):} Diagnostic interface displaying connected backend URLs, token validation states, and dynamic feature probe results.
+\end{itemize}

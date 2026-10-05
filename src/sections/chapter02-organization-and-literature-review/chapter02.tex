@@ -1,5 +1,5 @@
 ﻿% =====================================================================
-%  Chapter 2 â€” Organization Details and Literature Review
+%  Chapter 2 Ã¢â‚¬â€ Organization Details and Literature Review
 %  Structure fixed by docs/guidelines/guidelines.md (section 3, item 2).
 %  Content sources: docs/project_detail/11_report_mapping.md (Chapter 2 row)
 %                    data/information/company_information.md
@@ -9,65 +9,150 @@
 
 % ---------------------------------------------------------------------
 \section{Introduction to Organization}
-% TODO Organisation overview, location, opening hours, online presence.
-% Source of truth: data/information/company_information.md section 1.
-%
-% Insert the logo as a figure, caption BELOW, centred:
-%   \begin{figure}[htbp]
-%     \centering
-%     \includegraphics[width=1.2in]{tribhuwan_university_logo.png}
-%     \caption{...}
-%   \end{figure}
-% Open decision D5: figure numbering scheme. company_information.md labels
-% the logo "Figure 2.1" and the hierarchy "Figure 2.2" (chapter-prefixed),
-% while the two sample reports use flat numbering. Pick one and apply it in
-% the captions, the List of Figures and the body text.
+Power Gym Budibazar Pokhara is an established commercial fitness center situated in Budibazar, Pokhara-26, Kaski District, Gandaki Province, Nepal. The organization provides an accessible, fully equipped athletic environment designed to support individuals in improving physical fitness, muscular strength, cardiovascular endurance, and overall lifestyle well-being. The facility is equipped with modern strength conditioning stations, free weights, cardiovascular machines, and open conditioning spaces catering to a wide demographic across the Pokhara metropolitan region.
+
+To accommodate the varied work, business, and educational schedules of its clientele, Power Gym operates seven days a week, opening at 5:00 AM and closing at 9:00 PM (16 operational hours daily). This extended operating window enables working professionals, self-employed individuals, and university students to schedule training sessions either before morning obligations or after evening work hours.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.3in]{company_logo.png}
+    \caption{Logo of Power Gym Budibazar Pokhara}
+    \label{fig:company-logo}
+\end{figure}
+
+In addition to its physical premises, Power Gym Budibazar Pokhara maintains an active online presence via digital social media channels. The organization operates an official Facebook page under the title ``Power Gym Budibazar Pokhara'' with approximately 1.7K followers. This digital channel has historically served as the primary medium for disseminating gym announcements, operating schedules, public holiday notices, membership fee offers, and community motivation. 
+
+With the widespread proliferation of mobile computing and smartphone usage among gym attendees, the administration identified an operational requirement to transcend static social media broadcasts. Specifically, management sought to establish a dedicated, interactive digital platform capable of directly assisting members in tracking workouts, following exercise instructions, and engaging with training plans. Consequently, the organization established a targeted software engineering project, which formed the focal mandate of this internship engagement. The formal contact and administrative particulars of the organization are summarized in Table~\ref{tab:org-contact}.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Organizational Contact Details}
+    \label{tab:org-contact}
+    \begin{tabular}{|l|p{3.8in}|}
+        \hline
+        \textbf{Information Parameter} & \textbf{Organizational Record} \\
+        \hline
+        Organization Name & Power Gym Budibazar Pokhara \\
+        Organization Type & Commercial Fitness and Athletic Training Center \\
+        Physical Location & Budibazar, Pokhara-26, Kaski, Nepal \\
+        Operating Schedule & 5:00 AM -- 9:00 PM (Monday through Sunday) \\
+        Official Social Media & Power Gym Budibazar Pokhara ($\sim$1.7K Facebook Followers) \\
+        Contact Telephone & 9846904440 \\
+        Operating Sector & Health, Physical Wellness, and Digitalization \\
+        Company Internship Mentor & Mr.~Krishna Subedi \\
+        \hline
+    \end{tabular}
+\end{table}
 
 % ---------------------------------------------------------------------
 \section{Organizational Hierarchy}
-% TODO Describe the structure: owner/partnership head, manager, then the
-% front desk, trainer, maintenance and digitalization teams.
-% Source: data/information/company_information.md section 3.
-%
-% The diagram already exists and ALREADY CONTAINS the caption text inside
-% the image (src/data/figures/organization_hierarchy.png). Either regenerate the
-% PNG without the caption, or do not add a \caption here, or the figure will
-% show the caption twice. 586 x 430 px â€” set width about 4.5in so the text
-% inside stays readable.
+The organizational structure of Power Gym Budibazar Pokhara is designed to facilitate seamless facility administration, customer service excellence, professional fitness guidance, and targeted technological evolution. The management hierarchy is structured to ensure direct accountability, efficient communication, and rapid operational coordination across all operational tiers.
+
+At the apex of the organizational hierarchy is the Gym Owner, who also serves as the Partnership Head. The owner provides strategic leadership, oversees financial planning and capital investments, formulates organizational policies, and evaluates business development milestones.
+
+Directly under the owner, the Gym Manager oversees day-to-day administrative and operational functions. The manager coordinates inter-team workflows, monitors membership service delivery, maintains regulatory and municipal compliance, and evaluates the performance of functional departments. The manager serves as the direct operational bridge connecting executive leadership with four specialized operating teams:
+\begin{itemize}
+    \item \textbf{Front Desk Staff:} The reception and front-desk team serves as the initial point of contact for members and prospective visitors. Responsibilities include welcoming guests, handling telephone and in-person inquiries, managing new membership registrations, issuing identification passes, processing subscription fee payments, and maintaining physical reception ledgers.
+    \item \textbf{Trainer Team:} The fitness coaching staff comprises certified gym trainers, dedicated personal coaches, and a specialized Zumba fitness instructor. The team is responsible for instructing members on proper exercise biomechanics, ensuring lifting safety, demonstrating equipment operation, designing individualized workout programs, and conducting energetic group fitness classes.
+    \item \textbf{Maintenance Team:} The facility maintenance unit is tasked with rigorous sanitation, hygiene maintenance, and preventative mechanical care. Team members inspect resistance machine cables, lubricate pulley systems, examine weight plate collars, ensure structural equipment integrity, and uphold clean facility standards throughout operational hours.
+    \item \textbf{Digitalization Unit:} The digitalization unit is a specialized technical division instituted to modernize the organization's information management infrastructure. The unit is responsible for designing, deploying, and maintaining software solutions, web portals, and mobile client applications. The internship project was executed directly within this unit under executive managerial oversight.
+\end{itemize}
+
+The structural relationship between the leadership, administration, and functional units is illustrated in Figure~\ref{fig:org-hierarchy}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=4.5in]{organization_hierarchy_clean.png}
+    \caption{Organizational Hierarchy of Power Gym Budibazar Pokhara}
+    \label{fig:org-hierarchy}
+\end{figure}
 
 % ---------------------------------------------------------------------
 \section{Working Domains of Organization}
-% TODO The bullet list of domains from company_information.md section 4,
-% rewritten into prose or an itemize list. Keep it to what that file says.
+Power Gym Budibazar Pokhara operates within the commercial health, wellness, and sports technology domain. Its operational scope encompasses multiple specialized disciplines aimed at fostering physical fitness and supporting member athletic progression. The core working domains include:
+\begin{itemize}
+    \item \textbf{Strength and Resistance Training:} Maintaining extensive inventories of free weights (dumbbells, kettlebells, Olympic barbells), plate-loaded machines, and selectorized cable resistance stations designed for muscular hypertrophy, absolute strength development, and physical rehabilitation.
+    \item \textbf{Cardiovascular Conditioning:} Operating dedicated cardiovascular equipment, including motorized treadmills, stationary bicycles, elliptical trainers, and rowing apparatus, supporting aerobic endurance and metabolic conditioning.
+    \item \textbf{Personal Coaching and Program Prescription:} Providing personalized, one-on-one training sessions led by experienced coaches who evaluate individual fitness levels, establish realistic progression goals, teach movement mechanics, and monitor compliance.
+    \item \textbf{Group Fitness and Zumba Instruction:} Hosting scheduled group training sessions and music-driven Zumba aerobics classes led by certified instructors, providing dynamic cardiovascular workouts and fostering member community engagement.
+    \item \textbf{Membership Administration and Customer Care:} Delivering streamlined member onboarding, flexible membership tier packages (monthly, quarterly, semi-annual, annual), attendance tracking, and responsive front-desk assistance.
+    \item \textbf{Equipment Engineering and Safety Maintenance:} Executing routine mechanical maintenance, cable tension calibrations, machine servicing, and sanitary facility upkeep to ensure uninterrupted operational safety.
+    \item \textbf{Social Communication and Brand Outreach:} Engaging members and the wider local community through regular updates, wellness tips, schedule revisions, and motivational content published on digital channels.
+    \item \textbf{Digitalization and Information Systems:} Innovating internal gym workflows through custom software engineering, specifically through the design, development, and integration of the Alcedo cross-platform mobile application ecosystem.
+\end{itemize}
 
 % ---------------------------------------------------------------------
 \section{Description of Intern Department/Unit}
-% TODO The Digitalization unit: its purpose, who it works with, the
-% intern's place in it.
-% Source: data/information/internship_information.md.
+The internship activities were conducted within the \textbf{Digitalization Unit} of Power Gym Budibazar Pokhara. In modern commercial fitness management, relying solely on manual reception books, paper workout logs, and static social media posts creates substantial information bottlenecks. The Digitalization Unit was established to address these inefficiencies by transitioning organizational communication, workout tracking, and member administration onto robust digital platforms.
+
+The primary operational mandate of the Digitalization Unit is to design, develop, test, and maintain digital software solutions that empower gym members with seamless access to training routines, performance tracking tools, and facility information. During the internship, the unit operated in close coordination with the Gym Manager and interdisciplinary staff:
+\begin{itemize}
+    \item \textit{Managerial Coordination:} Regular alignment meetings were conducted with the Gym Manager to review feature backlogs, validate application design mockups, and ensure functional compliance with gym policies.
+    \item \textit{Front Desk Integration:} The unit engaged with reception staff to analyze traditional membership onboarding workflows, member inquiry patterns, and data management needs.
+    \item \textit{Trainer Consultation:} The unit collaborated with the coaching staff to systematically catalog exercise movements, identify target muscle groupings, document biomechanical instructions, and structure foundational workout blueprints for the mobile database.
+\end{itemize}
+
+Within this unit, the intern was assigned the role of \textbf{Mobile Application Developer Intern}, working under the technical supervision and guidance of company mentor Mr.~Krishna Subedi. The technical assignment encompassed architecting and implementing the client-side user interface in React Native and Expo, establishing local offline-first SQLite database models via Drizzle ORM, managing centralized Redux state, and developing supporting backend modules in NestJS and MongoDB. The internship parameters are detailed in Table~\ref{tab:internship-details}.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Internship Details}
+    \label{tab:internship-details}
+    \begin{tabular}{|l|p{3.8in}|}
+        \hline
+        \textbf{Internship Parameter} & \textbf{Details} \\
+        \hline
+        Assigned Designation & Mobile Application Developer Intern \\
+        Assigned Department / Unit & Digitalization Unit \\
+        Host Enterprise & Power Gym Budibazar Pokhara \\
+        Academic Institution & Prithvi Narayan Campus, Tribhuvan University \\
+        Total Duration & 12 Weeks (July -- September) \\
+        Operating Schedule & Monday to Friday (6 Hours per Day, 30 Hours/Week) \\
+        Company Mentor & Mr.~Krishna Subedi \\
+        Academic Supervisor & Mr.~Devilal Timilsina \\
+        \hline
+    \end{tabular}
+\end{table}
 
 % ---------------------------------------------------------------------
 \section{Literature Review}
-% TODO This is the only section written from outside the project data.
-% Requires REAL, verifiable sources in APA, cited in text with \citep.
-%
-% Topics that the project genuinely used, each needing sources:
-%   React Native and Expo, expo-router / file-based routing
-%   Redux Toolkit state management
-%   SQLite on mobile, Drizzle ORM, schema migrations
-%   Mobile UI/UX and design systems, Material Design 3
-%   REST API integration and offline-first mobile architecture
-%   Feature flags / capability negotiation
-%   JWT authentication and refresh-token rotation
-%   Mobile app security, local encryption and secure storage
-%   Software testing: unit, integration and end-to-end testing on mobile
-%   Version control with Git, branching and merge practice
-%
-% Suggested entry points for the reference list:
-%   project_detail/16_glossary_and_abbreviations.md lists the abbreviations
-%   that will need defining here.
-% Do not cite anything that cannot be looked up. Every entry must be added
-% to back-matter/references.tex with the APA label rule from plan.md.
-%
-% End the section by stating how the literature relates to the work done in
-% Chapter 3, in the style of sample 2.pdf.
+A comprehensive literature review is essential to ground the technical methodologies, architectural patterns, and software frameworks utilized during the development of the Alcedo mobile application. This section examines relevant peer-reviewed scholarly publications, authoritative software engineering standards, and industry technical literature across six core domains: cross-platform mobile architectures, user-centered interface design, client-side state management, offline-first embedded persistence, modular backend services, and secure token lifecycle management.
+
+\subsection{Evolution of Cross-Platform Mobile Architectures}
+In contemporary mobile software engineering, developing native applications independently for both iOS (Swift/Objective-C) and Android (Kotlin/Java) requires maintaining distinct codebases, duplicate engineering teams, and separate quality assurance pipelines \citep{biorn2020survey}. To overcome these economic and operational inefficiencies, cross-platform development paradigms have gained widespread scholarly and industrial adoption. Modern cross-platform frameworks allow developers to author a unified application codebase that compiles or bridges directly to native platform primitives.
+
+Among contemporary frameworks, React Native represents a paradigm shift toward declarative, component-driven user interface engineering \citep{banks2020learning}. Rather than utilizing webviews that suffer from latency and rendering overhead, React Native maps declarative JavaScript components directly to native host platform widgets. The introduction of modern JavaScript engines (such as Hermes) and the JavaScript Interface (JSI) eliminates legacy serialization bottlenecks, enabling synchronous communication between JavaScript threads and native UI runtime threads \citep{biorn2020survey}. Furthermore, the Expo application ecosystem builds upon React Native by providing unified native build tooling, standard library abstractions, and an integrated development lifecycle.
+
+Complementing component rendering, application navigation in mobile systems has evolved from imperative stack manipulation toward declarative, file-based routing frameworks such as Expo Router. In file-based routing, screen hierarchies and deep-linking structures are derived directly from the filesystem layout. This architectural approach reduces routing boilerplate, guarantees predictable navigation state transitions, enforces route encapsulation, and provides out-of-the-box deep-linking capabilities across complex multi-tab interfaces.
+
+\subsection{User-Centered Interface Design and Modular Design Systems}
+The usability and adoption of personal tracking applications depend heavily on user interface (UI) coherence and user experience (UX) design \citep{abras2004}. User-centered design methodologies emphasize that software interfaces must accommodate human cognitive constraints, minimize cognitive friction, and provide intuitive mental models \citep{nielsen1994}. In fitness applications, where users interact with devices in physically demanding environments, interface elements must offer immediate readability, generous touch targets, and unambiguous feedback.
+
+To achieve visual and behavioral consistency, modern frontend engineering relies on atomic design systems and structured design tokens \citep{frain2022}. Design tokens encapsulate fundamental visual constants---such as semantic color palettes, typography scales, border radii, and spacing units---into centralized, immutable definitions. Organizing interfaces into atomic components (buttons, input fields, cards, badges) constructed from shared tokens ensures visual harmony across diverse screen dimensions and enables dynamic theme switching (such as dark, light, and high-contrast true-black modes) without duplicating layout logic \citep{frain2022}.
+
+\subsection{Client-Side State Management in Reactive Systems}
+As mobile applications expand in complexity, managing client-side state becomes a primary architectural challenge. In reactive frameworks, passing application state through deep component trees (prop-drilling) creates tight component coupling, complicates state tracing, and triggers unnecessary UI re-rendering cycles \citep{banks2020learning}. 
+
+Predictable state containers, exemplified by Redux and modern Redux Toolkit (RTK), resolve these challenges by establishing a single source of truth governed by unidirectional data flow \citep{banks2020learning}. State modifications are dispatched through explicit action objects and processed by deterministic reducer functions. By integrating Immer-based immutable state mutators, Redux Toolkit prevents unintended state mutation bugs while simplifying reducer logic. Furthermore, modern listener middlewares enable developers to intercept state transitions and execute asynchronous side-effects---such as local storage synchronization and background telemetry---outside the UI rendering thread.
+
+\subsection{Offline-First Architecture and Embedded Local Persistence}
+In mobile computing, intermittent network connectivity is a standard operating condition rather than an edge case. Fitness facilities frequently reside in subterranean basements or reinforced concrete structures characterized by severe cellular signal attenuation \citep{kleppmann2017}. Applications that mandate constant server round-trips for basic data entry suffer from elevated failure rates and degraded user satisfaction. Consequently, the offline-first design paradigm mandates that local client storage serve as the primary source of truth, with network synchronization operating as an opportunistic background process \citep{kleppmann2017}.
+
+Implementing robust offline-first persistence on mobile devices requires an embedded, ACID-compliant database engine. SQLite has established itself as the global standard for embedded relational storage due to its serverless zero-configuration architecture, small memory footprint, and reliable transactional integrity. To eliminate the vulnerabilities and maintenance overhead of raw SQL string concatenation, modern development employs type-safe Object-Relational Mapping (ORM) and query builder layers such as Drizzle ORM. Drizzle provides TypeScript-first schema declarations, compile-time query verification, and structured schema migration management, ensuring database schema evolution remains verifiable and robust across application versions.
+
+For sensitive client-side data, including authentication credentials and cryptographic tokens, standard plaintext databases are insufficient. Secure mobile engineering dictates storing cryptographic tokens within hardware-backed security modules---namely Apple Keychain on iOS and KeyStore on Android---accessed through encrypted key-value storage abstractions.
+
+\subsection{Modular Backend Architecture and RESTful Services}
+Modern distributed client-server applications rely on structured Application Programming Interfaces (APIs) to exchange state and coordinate multi-user data \citep{fielding2000}. The Representational State Transfer (REST) architectural style establishes key principles for reliable networked systems, including stateless client-server communication, uniform resource identification via standard HTTP methods (GET, POST, PATCH, DELETE), and predictable response representations \citep{fielding2000}.
+
+On the server tier, building scalable backend services in asynchronous runtime environments (such as Node.js) benefits significantly from structured architectural frameworks \citep{tilkov2010node}. NestJS provides an enterprise-grade application architecture built upon TypeScript. By implementing established software patterns---including Inversion of Control (IoC), Dependency Injection (DI), and modular controller-service-repository layering---NestJS enforces strict separation of concerns, testability, and clear boundary isolation between discrete business domains \citep{martin2008clean}.
+
+For semi-structured domain models such as fitness tracking, document-oriented NoSQL databases (such as MongoDB) provide notable architectural advantages. Unlike rigid tabular schemas that require complex multi-table joins for variable workout logs, MongoDB's document model represents workout sessions, nested exercise sets (warmup, normal, drop, failure), and user preferences as cohesive BSON documents, facilitating high write throughput and agile schema evolution.
+
+\subsection{Token-Based Authentication and Security Lifecycles}
+Securing mobile API endpoints requires stateless authentication protocols that preserve server scalability. The JSON Web Token (JWT) open standard (RFC 7519) provides a compact, self-contained mechanism for digitally transmitting verifiable claims between distributed parties \citep{jones2015jwt}. 
+
+In production mobile authentication lifecycles, security best practices mandate separating credentials into short-lived access tokens and longer-lived refresh tokens. Short-lived access tokens mitigate unauthorized access windows in the event of token interception. When an access token expires, client applications utilize a refresh token to obtain a renewed credential without forcing the user to re-authenticate manually. To ensure robustness, mobile HTTP clients must implement single-flight concurrency controls: when multiple asynchronous requests encounter a 401 Unauthorized response concurrently, an interceptor must enqueue dependent requests, execute a single token refresh handshake, update credentials, and transparently replay the queued requests without race conditions.
+
+\subsection{Synthesis and Application to Project Alcedo}
+The scholarly and technical literature reviewed above provided the architectural foundation for the design and implementation of the Alcedo fitness application during the internship at Power Gym Budibazar Pokhara. The principles of cross-platform component engineering and declarative routing informed the modular frontend structure in React Native and Expo Router. The offline-first persistence paradigm guided the implementation of SQLite and Drizzle ORM to ensure members could record workout sessions reliably regardless of gym connectivity. Furthermore, the modular patterns of NestJS and stateless JWT authentication governed the construction of backend service endpoints for user profiles, workout management, and dynamic feature distribution. The practical realization of these architectural concepts is detailed in Chapter~3.

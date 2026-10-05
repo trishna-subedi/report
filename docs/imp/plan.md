@@ -285,3 +285,16 @@ Tests run against the final script:
 Note for future edits: the `\graphicspath` in `main.tex` must stay
 `{figures/}{../data/figures/}` while `main.tex` lives in `src/sections/`. The preflight check
 fails loudly if the file is moved without updating it, which is the intended behaviour.
+
+## 12. Content rollout strategy — chapters first, front matter last
+
+As decided, all main content chapters (Chapters 1–4) will be implemented first, followed by references, appendices, and finally the front matter (abstract, approval certificates, roll numbers).
+
+Chapter 1 plan has been established according to `docs/guidelines/guidelines.md` and `docs/project_detail/11_report_mapping.md`:
+- 1.1 Introduction: B.Sc. CSIT 8th semester curriculum context (CSC461), TU IoST requirements, Power Gym Budibazar Pokhara host organization, Mobile Application Developer Intern role in the Digitalization Unit.
+- 1.2 Problem Statement: Dual-layer framing — bridging academic theory to production engineering; solving Power Gym's reliance on manual records and social media by creating a dedicated mobile application for workout logging and member guidance.
+- 1.3 Objectives: Derived strictly from `role_and_responsibility.md` — UI/UX component engineering, screen/navigation implementation, state & local persistence (SQLite/Drizzle), backend service integration (User, Workout, Feature Management in NestJS), secure client-backend communication, and quality assurance.
+- 1.4 Scope and Limitations:
+  - 1.4.1 Scope: Cross-platform React Native / Expo client (24 screens, 5 tabs, modular token design system, offline-first SQLite/Drizzle store) and NestJS backend-v2 modules.
+  - 1.4.2 Limitations: 12-week academic timeline, single-contributor intern scope, simulator-only verification without physical device silicon/haptic testing, and mock/local authentication without external cloud OAuth secrets.
+- 1.5 Report Organization: Narrative overview of Chapters 1 to 4, references, and appendices.
