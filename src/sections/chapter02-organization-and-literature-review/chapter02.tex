@@ -1,0 +1,73 @@
+﻿% =====================================================================
+%  Chapter 2 â€” Organization Details and Literature Review
+%  Structure fixed by docs/guidelines/guidelines.md (section 3, item 2).
+%  Content sources: docs/project_detail/11_report_mapping.md (Chapter 2 row)
+%                    data/information/company_information.md
+%                    data/information/internship_information.md
+% =====================================================================
+\chapter{Organization Details and Literature Review}
+
+% ---------------------------------------------------------------------
+\section{Introduction to Organization}
+% TODO Organisation overview, location, opening hours, online presence.
+% Source of truth: data/information/company_information.md section 1.
+%
+% Insert the logo as a figure, caption BELOW, centred:
+%   \begin{figure}[htbp]
+%     \centering
+%     \includegraphics[width=1.2in]{tribhuwan_university_logo.png}
+%     \caption{...}
+%   \end{figure}
+% Open decision D5: figure numbering scheme. company_information.md labels
+% the logo "Figure 2.1" and the hierarchy "Figure 2.2" (chapter-prefixed),
+% while the two sample reports use flat numbering. Pick one and apply it in
+% the captions, the List of Figures and the body text.
+
+% ---------------------------------------------------------------------
+\section{Organizational Hierarchy}
+% TODO Describe the structure: owner/partnership head, manager, then the
+% front desk, trainer, maintenance and digitalization teams.
+% Source: data/information/company_information.md section 3.
+%
+% The diagram already exists and ALREADY CONTAINS the caption text inside
+% the image (src/data/figures/organization_hierarchy.png). Either regenerate the
+% PNG without the caption, or do not add a \caption here, or the figure will
+% show the caption twice. 586 x 430 px â€” set width about 4.5in so the text
+% inside stays readable.
+
+% ---------------------------------------------------------------------
+\section{Working Domains of Organization}
+% TODO The bullet list of domains from company_information.md section 4,
+% rewritten into prose or an itemize list. Keep it to what that file says.
+
+% ---------------------------------------------------------------------
+\section{Description of Intern Department/Unit}
+% TODO The Digitalization unit: its purpose, who it works with, the
+% intern's place in it.
+% Source: data/information/internship_information.md.
+
+% ---------------------------------------------------------------------
+\section{Literature Review}
+% TODO This is the only section written from outside the project data.
+% Requires REAL, verifiable sources in APA, cited in text with \citep.
+%
+% Topics that the project genuinely used, each needing sources:
+%   React Native and Expo, expo-router / file-based routing
+%   Redux Toolkit state management
+%   SQLite on mobile, Drizzle ORM, schema migrations
+%   Mobile UI/UX and design systems, Material Design 3
+%   REST API integration and offline-first mobile architecture
+%   Feature flags / capability negotiation
+%   JWT authentication and refresh-token rotation
+%   Mobile app security, local encryption and secure storage
+%   Software testing: unit, integration and end-to-end testing on mobile
+%   Version control with Git, branching and merge practice
+%
+% Suggested entry points for the reference list:
+%   project_detail/16_glossary_and_abbreviations.md lists the abbreviations
+%   that will need defining here.
+% Do not cite anything that cannot be looked up. Every entry must be added
+% to back-matter/references.tex with the APA label rule from plan.md.
+%
+% End the section by stating how the literature relates to the work done in
+% Chapter 3, in the style of sample 2.pdf.

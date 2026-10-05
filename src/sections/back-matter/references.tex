@@ -1,0 +1,70 @@
+% =====================================================================
+%  References (APA 7th edition)
+%
+%  NOTE: \begin{thebibliography} issues its own chapter heading, taken from
+%  \bibname. The heading is therefore renamed below instead of adding a
+%  manual \chapter*{References} — two headings would otherwise collide.
+%
+%  HOW TO ADD A SOURCE — follow this exactly, or the in-text citation will
+%  not match APA (see docs/imp/plan.md section 6):
+%
+%    \bibitem[Surname (Year)]{key}
+%    Surname, A. A. (Year). \textit{Title of the work}. Publisher.
+%
+%  For three or more authors the label must use "et al.":
+%    \bibitem[Abras et al. (2004)]{key}
+%
+%  Then cite in the text with \citep{key} -> (Surname, Year)
+%                              or  \citet{key} -> Surname (Year)
+%
+%  Every entry here must be a real, checkable source that is actually cited
+%  in the text. If a source was read but not cited, it belongs in
+%  bibliography.tex instead.
+% =====================================================================
+\clearpage
+\renewcommand{\bibname}{References}
+\addcontentsline{toc}{chapter}{References}
+
+\begin{thebibliography}{99}
+
+% ---------------------------------------------------------------------
+% TODO: replace this scaffold entry with the real literature used in
+% section 2.5. Delete it before submission if it is not cited.
+%
+% These two are placeholders showing the required format only — verify each
+% against the publisher before keeping it.
+% ---------------------------------------------------------------------
+
+\bibitem[Frain (2022)]{frain2022}
+Frain, B. (2022). \textit{Responsive web design with HTML5 and CSS} (4th ed.). New Riders.
+
+\bibitem[Abras et al. (2004)]{abras2004}
+Abras, P., Maloney-Krichmar, D., \& Preece, J. (2004). User-centered design. In W. Bainbridge (Ed.),
+\textit{Encyclopedia of human-computer interaction}. Sage Publications.
+
+% ---------------------------------------------------------------------
+% Likely additions — confirm each is real and actually cited:
+%   Expo documentation            https://docs.expo.dev
+%   React Native documentation    https://reactnative.dev/docs/getting-started
+%   expo-router documentation     https://docs.expo.dev/router/introduction/
+%   Redux Toolkit documentation  https://redux-toolkit.js.org/introduction/getting-started
+%   Drizzle ORM documentation    https://orm.drizzle.team/docs/overview
+%   SQLite documentation          https://www.sqlite.org/docs.html
+%   NestJS documentation          https://docs.nestjs.com/
+%   MongoDB / Mongoose docs       https://mongoosejs.com/docs/
+%   JWT (RFC 7519)                https://datatracker.ietf.org/doc/html/rfc7519
+%   Material Design 3             https://m3.material.io/
+%   Nielsen, J. (1994). Usability engineering. Morgan Kaufmann.
+%   Fielding, R. (2000). Architectural styles and the design of network-based
+%     software architectures (Doctoral dissertation, University of California,
+%     Irvine). https://ics.uci.edu/~fielding/pubs/dissertation/top.htm
+%   W3C WCAG 2.2 https://www.w3.org/TR/WCAG22/
+% ---------------------------------------------------------------------
+
+\end{thebibliography}
+
+% Formatting note: hanging indent is inherited from the report class. If the
+% reference list needs a 0.5in hanging indent (APA), add before
+% \begin{thebibliography}:
+%   \setlength{\itemsep}{0pt}
+% and check the result visually.

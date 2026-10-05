@@ -1,0 +1,30 @@
+# LaTeX generated files
+# Everything the build produces lands in src/build/ and must not be committed.
+build/*
+!build/.gitkeep
+
+# Belt and braces: in case anything is ever generated next to the sources.
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.dvi
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.pdf
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+*.xdv
+
+# Editor and OS noise
+*~
+.DS_Store
+Thumbs.db

@@ -1,0 +1,159 @@
+% =====================================================================
+%  Chapter 3 — Internship Activities
+%  Structure fixed by docs/guidelines/guidelines.md (section 3, item 3):
+%    3.1 Roles and Responsibilities
+%    3.2 Weekly log
+%    3.3 Description of the Project(s) Involved During Internship
+%    3.4 Tasks / Activities Performed
+%  Note the order: the guidelines put the weekly log BEFORE the project
+%  description. Sample 1 uses a different order; follow the guidelines.
+%
+%  Content sources: docs/project_detail/11_report_mapping.md (Chapter 3)
+% =====================================================================
+\chapter{Internship Activities}
+
+% ---------------------------------------------------------------------
+\section{Roles and Responsibilities}
+% TODO Source of truth: data/information/role_and_responsibility.md.
+% HARD RULE from that file: "You may polish grammar, but do not add any
+% role, tool, or task that is not written here." Nothing may be added.
+% The file already covers: frontend development and UI implementation,
+% basic backend development, frontend-backend integration, user and
+% profile data, workout CRUD, feature flags, data flow, testing and
+% debugging.
+%
+% The closing paragraph of that file may be used as the closing paragraph
+% of this section.
+
+% ---------------------------------------------------------------------
+\section{Weekly Log}
+% TODO Table with EXACTLY 4 columns and 12 rows, from
+% data/information/weekly_logs.md:
+%   Week | Responsibilities | Activities Performed | Observations
+% Grammar may be polished. No new activity, tool, date or row.
+% Delete the stray "Qs" typo at the end of the last cell.
+%
+% The table is long and the cells are wordy: use longtable with a
+% repeating header, and \small (open decision D4 — table font size).
+% Suggested:
+%   \begin{longtable}{@{}p{0.5in}p{1.5in}p{2.6in}p{1.9in}@{}}
+%   ... \endfirsthead ... \endhead ... \end{longtable}
+% Caption ABOVE the table, bold 12pt:
+%   \caption{Weekly logs during the internship}
+% Confirm the real week dates before typing them — see the open question on
+% the internship timeline in project_detail/12_open_questions_and_discrepancies.md.
+
+% ---------------------------------------------------------------------
+\section{Description of the Project(s) Involved During Internship}
+% TODO The application, its purpose for the gym, and its main features.
+% Source of truth: project_detail/01_project_overview.md, especially
+% section 4 (feature inventory) and section 3 (the two backends).
+%
+% Naming: the application is "Alcedo"; "LiftLog" is the inherited internal
+% name. Use Alcedo in the prose and mention LiftLog once if the repository
+% link requires it. See project_detail/16_glossary_and_abbreviations.md.
+%
+% Put the system architecture figure here or in 3.4 — the ASCII diagram in
+% project_detail/13_architecture_and_data_flow.md section 1 is drawn
+% directly from the code and is accurate. Draw it as a TikZ or as an
+% image; caption below, centred.
+%
+% Technology list for this section: project_detail/17_dependency_inventory.md
+% section 5, as a table.
+
+% ---------------------------------------------------------------------
+\section{Tasks/Activities Performed}
+% TODO The technical heart of the report. Each subsection below maps to
+% verified evidence; the order is a suggestion and subsections may be
+% merged if the writing grows long.
+
+\subsection{Development Environment and Project Structure}
+% TODO Expo SDK 57, React Native 0.86, React 19, TypeScript 6 strict,
+% expo-router with typed routes, Metro and Babel configuration.
+% Source: project_detail/03_mobile_app.md sections 1, 2 and 9.
+
+\subsection{Reusable Interface Components and the Design System}
+% TODO The foundation component kit (82 files), the design token file
+% app/src/styles/theme.ts (947 lines, 192 named text styles), light and dark
+% themes, accent seeds, and the mandated convention of one folder per
+% section with a paired .styles.ts file.
+% Sources: project_detail/03_mobile_app.md sections 7 and 7.1,
+% project_detail/07_design_system_and_screens.md sections 2 and 3.
+
+\subsection{Navigation and Screen Implementation}
+% TODO Five tabs (Workout, Feed, Stats, History, Settings), 49 route files,
+% 24 pages tracked in the design tracker, custom tab bar, modal and stack
+% screens, plus the page-by-page verification process with its per-page
+% ledger.
+% Sources: project_detail/03_mobile_app.md section 3,
+% project_detail/07_design_system_and_screens.md section 1,
+% project_detail/09_git_history_workflow.md section 4 (phases C and D).
+
+\subsection{State Management}
+% TODO Redux Toolkit with 11 slices, the custom addEffect listener
+% middleware used for side effects and persistence, and why the built-in
+% serialisability and immutability checks are disabled.
+% Source: project_detail/03_mobile_app.md section 5.
+
+\subsection{Local Data Storage and Versioning}
+% TODO SQLite through expo-sqlite with Drizzle ORM, 17 tables, 9 SQL
+% migrations, the file-based key-value store with atomic writes, the secure
+% store for the auth session, and the model storage version system with its
+% six named migration steps.
+% Sources: project_detail/03_mobile_app.md section 6,
+% project_detail/13_architecture_and_data_flow.md section 5.
+
+\subsection{Frontend and Backend Integration}
+% TODO Carries the most important constraint in the whole report:
+% the mobile application is wired to backend-v2 for AUTHENTICATION ONLY.
+% The generic authenticated-fetch wrapper adds the bearer token, performs a
+% single-flight refresh on 401 and retries once. Sync, billing, social and
+% AI endpoints exist server-side but have no caller in the app; the app's
+% AI chat targets the older .NET SignalR hub.
+% State this accurately — do not claim sync or billing integration.
+% Sources: project_detail/13_architecture_and_data_flow.md sections 2 and 4,
+% project_detail/05_backend_v2.md section 11,
+% project_detail/11_report_mapping.md (the "3.4 evidence that must be phrased
+% carefully" table).
+
+\subsection{User Management}
+% TODO The backend-v2 users module: GET and PATCH /api/users/me, the
+% premium entitlement state machine, and the strict DTO validation.
+% Source: project_detail/05_backend_v2.md sections 3 and 8.
+
+\subsection{Workout Management}
+% TODO Workout CRUD with version numbers, cursor pagination, soft delete with
+% tombstones, and the batch sync endpoint with idempotency and
+% compare-and-set conflict handling.
+% Source: project_detail/05_backend_v2.md section 6.
+% Constraint: describe it as backend work; the app is not yet calling it.
+
+\subsection{Feature Management}
+% TODO Two distinct mechanisms, both real:
+%   (a) the public capability map GET /api/features with its five flags,
+%       consumed by the app's backend probe;
+%   (b) the admin-editable site configuration: 16 allowlisted keys of which 3
+%       are encrypted at rest with AES-256-GCM and masked on read.
+% Explain the multi-backend routing that ties them to the UI.
+% Sources: project_detail/05_backend_v2.md section 5,
+% project_detail/13_architecture_and_data_flow.md section 3.
+
+\subsection{Testing and Debugging}
+% TODO The numbers, per layer:
+%   app:      140 Vitest spec files (51 components, 34 store, 25 models,
+%             19 services, 7 utils, 2 db, 2 hooks) + fast-check property
+%             tests + 6 Maestro end-to-end flows
+%   backend-v2: 19 Jest suites, 194 it() blocks, 213 executed cases
+%   .NET:     22 TUnit test classes, 115 tests, dual-provider fixtures
+% Say the gates were run manually and recorded in commit messages and the
+% merge ledger; do NOT claim CI, because .github is gitignored and untracked.
+% Sources: project_detail/08_testing_quality_tooling.md sections 1-6.
+
+\subsection{Version Control and Branch Management}
+% TODO Git with Conventional Commits, feature branches, a formal merge
+% programme with a hazard register and a documented incident, safety
+% backups, and the merge ledger as the record.
+% Sources: project_detail/09_git_history_workflow.md sections 4 and 6.
+% Constraint: 17 commits carry the human identity and 32 an agent identity.
+% Resolve the authorship question in
+% project_detail/12_open_questions_and_discrepancies.md before writing.

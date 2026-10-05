@@ -1,0 +1,73 @@
+% =====================================================================
+%  Cover and Title Page
+%  Text taken from data/documents/front.pdf page 1. Do not rewrite names,
+%  titles or the roll number (data/information/front_matter.md).
+%
+%  No page number is printed: the titlepage environment sets the page style
+%  to empty. The vertical spacing below is tuned so the whole cover fits on
+%  a single A4 page — verify after any edit:
+%     pdftotext -f 2 -l 2 main.pdf - | Select-Object -First 1
+%  must return the certificate page, not cover text.
+% =====================================================================
+\begin{titlepage}
+\centering
+\setstretch{1.0}          % the cover is a display page, not body text
+
+\vspace*{0.25in}
+
+% University logo. The source file is only 156 x 181 px, so it must stay
+% small: about 1.0in wide. Optionally replace it with the higher-resolution
+% version embedded in front.pdf (305 x 354 px).
+\includegraphics[width=1.0in]{tribhuwan_university_logo.png}
+
+\vspace{0.22in}
+
+{\bfseries\fontsize{14}{16}\selectfont Prithvi Narayan Campus\par}
+{\bfseries\fontsize{14}{16}\selectfont Tribhuvan University\par}
+{\bfseries\fontsize{14}{16}\selectfont Institute of Science and Technology\par}
+
+\vspace{0.5in}
+
+{\bfseries\fontsize{16}{19}\selectfont An Internship Report\par}
+\vspace{0.06in}
+{\bfseries\fontsize{16}{19}\selectfont on\par}
+\vspace{0.14in}
+{\bfseries\fontsize{16}{19}\selectfont ``Mobile Application Developer Intern''\par}
+\vspace{0.06in}
+{\bfseries\fontsize{16}{19}\selectfont at\par}
+\vspace{0.14in}
+{\bfseries\fontsize{16}{19}\selectfont Power Gym Budibazar Pokhara\par}
+
+\vspace{0.42in}
+
+{\bfseries\fontsize{12}{14}\selectfont Submitted To:\par}
+\vspace{0.04in}
+{\fontsize{12}{14}\selectfont
+Department of Computer Science and Information Technology\par
+B.Sc. CSIT Program, Prithvi Narayan Campus\par
+Bhimkalipatan-1, Pokhara\par}
+
+\vspace{0.34in}
+
+{\fontsize{12}{14}\selectfont
+In partial fulfillment of the requirements for the degree of\par
+Bachelor of Science in Computer Science and Information Technology\par}
+
+\vspace{0.38in}
+
+{\bfseries\fontsize{12}{14}\selectfont Submitted By:\par}
+\vspace{0.04in}
+{\fontsize{12}{14}\selectfont
+Tirshana Subedi\par
+Roll No: 79011927\par
+% OPEN QUESTION: data/information/front_matter.md marks the roll number
+% "[CONFIRM: 79011927 ]". The cover page of front.pdf prints 79011927 while
+% its acknowledgement page prints 79011. Use the confirmed value here AND
+% in acknowledgement.tex, or nowhere.
+B.Sc. CSIT Program\par}
+
+\vspace{0.34in}
+
+{\bfseries\fontsize{12}{14}\selectfont October 2026\par}
+
+\end{titlepage}
