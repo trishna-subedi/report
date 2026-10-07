@@ -10,93 +10,78 @@
 
 % ---------------------------------------------------------------------
 \section{Introduction}
-An internship is an essential educational program that integrates formal classroom academic study with planned, supervised industry experience \citep{parveen2012}. It provides undergraduate students with the opportunity to transition from academic learning to professional practice by participating in meaningful, real-world engineering projects within an organization \citep{nace2022}. Under the curriculum prescribed by the Institute of Science and Technology (IoST), Tribhuvan University, the Bachelor of Science in Computer Science and Information Technology (B.Sc. CSIT) requires each final-year student to complete an intensive internship course (CSC461) carrying six credit hours, spanning a minimum duration of 10 to 12 weeks with at least 180 to 200 working hours \citep{tu2022curriculum}. This organization-based training serves as an apprenticeship where students apply theoretical principles to live systems, understand industrial workflows, and develop the professional competencies required in the modern technology sector.
+An internship is an educational program that integrates classroom study with supervised industry experience \citep{parveen2012}. It enables students to apply theoretical knowledge to real-world projects within a professional organization \citep{nace2022}. Under the B.Sc. CSIT curriculum prescribed by the Institute of Science and Technology (IoST), Tribhuvan University, each final-year student must complete an internship course (CSC461) carrying six credit hours over 10 to 12 weeks with at least 180 working hours \citep{tu2022curriculum}.
 
-In fulfillment of the B.Sc. CSIT degree requirements at Prithvi Narayan Campus, Pokhara, the internship was undertaken at Power Gym Budibazar Pokhara, located in Budibazar, Pokhara-26, Kaski, Nepal. Power Gym Budibazar Pokhara is an established fitness center operating seven days a week from 5:00 AM to 9:00 PM, providing strength training, personal coaching, group fitness sessions, and general wellness facilities to a diverse membership base. To modernize its operations and expand member engagement beyond physical premises and traditional social media channels, the management established a dedicated Digitalization Unit. The internship was conducted within this unit under the role of Mobile Application Developer Intern, supervised on-site by company mentor Mr.~Krishna Subedi.
+In fulfillment of these requirements at Prithvi Narayan Campus, Pokhara, the internship was undertaken at Power Gym Budibazar Pokhara, a fitness center located in Budibazar, Pokhara-26, Kaski, Nepal. The gym operates seven days a week from 5:00 AM to 9:00 PM, providing strength training, personal coaching, and group fitness services. To modernize its operations, the management established a Digitalization Unit. The internship was conducted within this unit under the role of Mobile Application Developer Intern, supervised by company mentor Mr.~Krishna Subedi.
 
-The focal initiative of the internship was the development of the organization's dedicated cross-platform mobile application, Alcedo. The project aims to provide gym members with an intuitive, offline-first digital companion to structure daily workout sessions, record exercises and sets, log cardio activities, consult verified exercise catalogs, track historical strength trends, and personalize application preferences. The intern's responsibilities encompassed user interface engineering, reusable component design, client-side state management, embedded database persistence, and integration with modern backend services for user profiles, workout management, and dynamic feature configurations. This report presents a systematic account of the internship activities, architectural decisions, and technical tasks performed throughout the engagement.
+The primary project was the development of Alcedo, a cross-platform mobile fitness application. Alcedo provides gym members with an offline-first digital companion to log workouts, track exercises and sets, consult exercise catalogs, view strength trends, and manage preferences. The intern's responsibilities included user interface implementation, component design, state management, local database persistence, and integration with backend services. This report presents a systematic account of the internship activities and technical work performed.
 
 % ---------------------------------------------------------------------
 \section{Problem Statement}
-Undergraduate computer science coursework provides foundational grounding in data structures, algorithms, relational database concepts, object-oriented design, and software engineering methodologies. However, classroom assignments predominantly involve isolated, simplified systems that do not expose students to the constraints and architectural challenges of production software engineering. In the domain of modern mobile application development, developers must handle complex asynchronous lifecycles, cross-platform UI rendering nuances, centralized state management with reactive side-effects, resilient offline-first embedded persistence, secure token-based authentication workflows, and automated regression testing. Consequently, students often experience a significant disconnect between theoretical concepts and the practical implementation standards demanded by the software industry.
+While the B.Sc. CSIT curriculum covers data structures, algorithms, database concepts, and software engineering principles, classroom assignments involve simplified systems that do not expose students to production software challenges such as cross-platform rendering, offline persistence, token-based authentication, and automated testing. Students consequently face a gap between theoretical knowledge and industry practice.
 
-From an organizational standpoint, Power Gym Budibazar Pokhara faced distinct operational challenges in managing member interaction and workout progression. Operating across sixteen hours daily (5:00 AM to 9:00 PM), the facility accommodates members with varied schedules, ranging from early-morning working professionals to evening university students. Prior to this project, the gym relied predominantly on physical front-desk interactions and an official Facebook page with approximately 1.7K followers for announcements and basic communication. While social media served promotional purposes, it offered no functional utility for member training management.
-
-The absence of a centralized digital platform resulted in several practical bottlenecks:
+From an organizational perspective, Power Gym Budibazar Pokhara relied on physical front-desk interactions and a Facebook page ($\sim$1.7K followers) for member communication. Neither channel offered functional utility for workout tracking or training management. The absence of a digital platform created the following bottlenecks:
 \begin{itemize}
-    \item \textbf{Lack of Structured Workout Tracking:} Members had to rely on fragmented memory or paper notebooks to track lifting weights, completed repetitions, rest intervals, and cardiovascular workouts. This lack of structured logging hindered systematic progressive overload, which is essential for strength progression.
-    \item \textbf{Absence of In-Gym Exercise Guidance:} Beginner and intermediate members frequently lacked immediate access to verified exercise descriptions, target muscle groupings, and movement execution details when trainers were assisting other clients.
-    \item \textbf{Data Fragmentation and No Progress Visibility:} Without longitudinal data storage and analytical tools, members could not visualize workout frequency, volume progression, or historical personal records over time.
-    \item \textbf{Absence of Digital Member Touchpoint:} The gym lacked a branded, cohesive mobile application capable of delivering training routines, managing member profile information, or adapting feature availability dynamically through administrative configurations.
+    \item Members relied on memory or paper notebooks to track weights, repetitions, and rest intervals, hindering systematic progressive overload.
+    \item Beginners lacked immediate access to verified exercise descriptions and muscle group information when trainers were assisting other clients.
+    \item Without data storage or analytics tools, members could not visualize workout frequency, volume trends, or personal records over time.
+    \item The gym lacked a branded mobile application to deliver training routines or manage member profiles digitally.
 \end{itemize}
 
-Addressing these operational and technological challenges required designing and developing a dedicated, performant, and offline-capable mobile application tailored to gym members, accompanied by scalable backend services to manage user profiles, workout data, and dynamic configurations.
+Addressing these challenges required developing a dedicated, offline-capable mobile application for gym members, supported by backend services for user profiles, workout data, and dynamic configurations.
 
 % ---------------------------------------------------------------------
 \section{Objectives}
-The overarching objective of the internship was to bridge theoretical knowledge acquired during the B.Sc. CSIT program with professional software engineering practices through the end-to-end development, integration, and testing of a production-grade cross-platform mobile application and supporting backend modules.
+The primary objective of the internship was to bridge academic knowledge with professional practice through the development of a cross-platform mobile application and supporting backend modules.
 
-To achieve this primary goal, the specific technical and professional objectives were formulated as follows:
+The specific objectives were:
 \begin{itemize}
-    \item \textbf{To design and implement responsive user interface components:} Build a consistent, modular frontend interface utilizing React Native, Expo, and TypeScript, adhering to atomic design tokens (typography, color palettes, spacing, buttons, input fields, and cards).
-    \item \textbf{To develop structured application navigation and user flows:} Implement file-based client navigation using Expo Router across five primary tabs (Home, Workout, History, Trends, and Settings) and twenty-four distinct route screens.
-    \item \textbf{To implement client-side state management and offline persistence:} Establish centralized application state management using Redux Toolkit slices with middleware listeners, and implement local offline-first persistence using an embedded SQLite database managed via Drizzle ORM schema migrations.
-    \item \textbf{To develop backend service modules:} Build and test modular backend services within a NestJS and MongoDB architecture, specifically covering User Management (profile retrieval and updates), Workout Management (CRUD operations and batch synchronization endpoints), and Feature Management (dynamic configuration flags).
-    \item \textbf{To establish secure frontend--backend integration:} Implement an authenticated network communication layer utilizing JSON Web Tokens (JWT) with automatic refresh token rotation and service probe verification.
-    \item \textbf{To ensure software reliability through automated testing and debugging:} Apply software verification methodologies, including Vitest unit tests, component simulation suites, TypeScript static typechecking, and systematic defect resolution.
-    \item \textbf{To develop professional software engineering competencies:} Gain practical experience in collaborative version control, architectural modularity, code refactoring, and industry-standard documentation practices.
+    \item To design and implement responsive user interface components using React Native, Expo, and TypeScript, following centralized design tokens.
+    \item To develop structured application navigation using Expo Router across five primary tabs and twenty-four route screens.
+    \item To implement client-side state management using Redux Toolkit and offline-first local persistence using SQLite with Drizzle ORM.
+    \item To develop backend service modules within NestJS and MongoDB covering User Management, Workout Management, and Feature Management.
+    \item To establish secure frontend--backend integration using JWT-based authentication with automatic token refresh.
+    \item To ensure software reliability through automated unit tests, component simulations, static typechecking, and systematic debugging.
+    \item To develop professional competencies in version control, modular architecture, and documentation practices.
 \end{itemize}
 
 % ---------------------------------------------------------------------
 \section{Scope and Limitation}
 
 \subsection{Scope}
-The scope of the internship was centered on the design, implementation, integration, and verification of the Alcedo mobile application and its supporting backend service modules for Power Gym Budibazar Pokhara.
+The internship scope encompassed the design, implementation, and verification of the Alcedo mobile application and its supporting backend services.
 
-The frontend engineering scope comprised:
+The frontend scope included:
 \begin{itemize}
-    \item Development of a cross-platform mobile client built on React Native 0.86, React 19, and Expo SDK 57 in TypeScript.
-    \item Construction of a reusable UI foundation library consisting of over 80 modular components and design tokens covering typography, themes (dark, light, and true black), spacing, cards, forms, and custom vector icons.
-    \item Implementation of twenty-four functional route screens organized across five core navigation tabs:
-    \begin{itemize}
-        \item \textit{Home:} Dashboard displaying quick start options, active training summaries, and workout streaks.
-        \item \textit{Workout:} Active workout execution flow, set-by-set logging, cardio tracking, rest timers, and exercise replacement workflows.
-        \item \textit{History:} Comprehensive calendar views, session inspection, workout editing, and historical log summaries.
-        \item \textit{Trends:} Visual performance analytics, volume heatmaps, personal record tracking, and muscle-group load distribution.
-        \item \textit{Settings:} User profile management, theme customization, measurement unit preferences, offline backup management, and feature diagnostics.
-    \end{itemize}
-    \item Implementation of client-side architecture using Redux Toolkit for active runtime state, combined with an embedded SQLite database managed via Drizzle ORM for local offline workout storage and schema migrations.
+    \item A cross-platform mobile client built with React Native 0.86, Expo SDK 57, and TypeScript.
+    \item A reusable UI component library with centralized design tokens supporting dark, light, and OLED display themes.
+    \item Twenty-four functional screens across five navigation tabs: Home, Workout, History, Trends, and Settings.
+    \item Client-side state management with Redux Toolkit and local offline storage using SQLite via Drizzle ORM.
 \end{itemize}
 
-The backend and integration scope encompassed:
+The backend and integration scope included:
 \begin{itemize}
-    \item Development of service modules within the NestJS 11 backend framework paired with MongoDB 8 via Mongoose:
-    \begin{itemize}
-        \item \textit{User Management:} Endpoints for user profile data retrieval and updates (\textit{PATCH /api/users/me}).
-        \item \textit{Workout Management:} Endpoints for creating, retrieving, updating, and synchronizing workout sessions and set records, including batch push/pull contracts with idempotency keys.
-        \item \textit{Feature Management:} Dynamic feature flag distribution via \textit{GET /api/features} and application site configuration allowlists.
-    \end{itemize}
-    \item Integration of an authenticated network client (\textit{authenticated-fetch}) implementing single-flight 401 token refresh interceptors and backend health probes.
-    \item Software quality assurance through unit test suites, component simulation tests, static type verification, and linting checks.
+    \item Backend modules in NestJS 11 with MongoDB 8 for User Management, Workout Management (CRUD and batch sync), and Feature Management (dynamic flags).
+    \item An authenticated network client implementing JWT token injection and single-flight 401 refresh interceptors.
+    \item Quality assurance through unit tests, static type verification, and linting.
 \end{itemize}
 
 \subsection{Limitations}
-Despite the comprehensive nature of the implemented features, certain constraints and limitations characterized the internship engagement:
 \begin{itemize}
-    \item \textbf{Academic Duration Constraint:} The internship was conducted within the 12-week timeframe allocated by the university curriculum. This limited timeline necessitated prioritizing core client-side features, local storage, and essential backend endpoints over secondary enterprise features.
-    \item \textbf{Single-Contributor Development Scope:} Development tasks within the Digitalization Unit were undertaken by the intern as an individual contributor. Consequently, large-scale concurrent development across multiple sub-teams was not feasible, requiring strict sequencing of frontend and backend milestones.
-    \item \textbf{Absence of Physical Hardware Device Testing:} Application testing, layout verification, and debugging were executed exclusively using mobile emulators (Android Virtual Devices), web simulators, and automated test environments. Physical hardware verification on physical iOS and Android smartphones was not conducted; as a result, physical hardware metrics such as tactile haptic engine feedback, device thermal dissipation, and physical battery consumption under continuous display-on conditions could not be empirically benchmarked.
-    \item \textbf{Local Integration and OAuth Credentials:} Third-party production services, such as production Google OAuth client secrets, Apple Developer credentials, and cloud deployment pipelines, were not configured within the local development environment. Client--backend integration was validated against local development instances using mocked token flows and structured test fixtures rather than public cloud deployments.
-    \item \textbf{Legacy Backend Separation:} The existing legacy backend service (ASP.NET Core API) remained an external, pre-existing dependency that was not modified during the internship; engineering contributions were strictly focused on the React Native mobile application and the NestJS backend modules.
+    \item The internship was limited to the 12-week timeframe prescribed by the university curriculum, requiring prioritization of core features over secondary enterprise features.
+    \item Development was undertaken by the intern as a single contributor, requiring sequential execution of frontend and backend milestones.
+    \item Application testing was performed exclusively on emulators and automated test environments; physical device testing was not conducted.
+    \item Third-party production credentials (Google OAuth, Apple Developer) and cloud deployment pipelines were not configured; integration was validated against local development instances.
+    \item The legacy backend (ASP.NET Core) was a pre-existing dependency and was not modified during the internship.
 \end{itemize}
 
 % ---------------------------------------------------------------------
 \section{Report Organization}
-This report is structured into four main chapters, followed by references and appendices, in strict compliance with the format prescribed by the Institute of Science and Technology, Tribhuvan University:
+This report is organized into four chapters followed by references and appendices, as prescribed by the IoST, Tribhuvan University:
 \begin{itemize}
-    \item \textbf{Chapter 1 --- Introduction:} Provides an overview of the internship program, establishes the problem statement, details the primary and specific objectives, outlines the project scope and limitations, and introduces the organization of the report.
-    \item \textbf{Chapter 2 --- Organization Details and Literature Review:} Presents an in-depth profile of Power Gym Budibazar Pokhara, including its organizational structure, working domains, operational hierarchy, and the Digitalization Unit. It further provides a scholarly literature review examining cross-platform mobile development frameworks, state management paradigms, local persistence strategies, and backend API architectural patterns.
-    \item \textbf{Chapter 3 --- Internship Activities:} Details the intern's roles and responsibilities, provides the weekly chronological log of activities performed over the 12-week period, describes the high-level system architecture of the mobile application and backend services, and provides an exhaustive technical narrative of the engineering tasks executed.
-    \item \textbf{Chapter 4 --- Conclusion and Learning Outcomes:} Concludes the report by assessing the degree to which the project objectives were fulfilled, summarizing the technical, architectural, and professional competencies acquired, discussing challenges overcome, and offering recommendations for future development.
-    \item \textbf{References and Appendices:} Contains a comprehensive list of scholarly citations formatted in APA 7th edition style, followed by appendices comprising supplementary materials such as application screenshots, system configuration snippets, and repository documentation.
+    \item \textbf{Chapter 1 --- Introduction:} Presents the internship overview, problem statement, objectives, scope, limitations, and report structure.
+    \item \textbf{Chapter 2 --- Organization Details and Literature Review:} Describes the host organization, its hierarchy, working domains, and the intern department; reviews relevant scholarly literature on cross-platform development, state management, offline persistence, and backend architecture.
+    \item \textbf{Chapter 3 --- Internship Activities:} Documents the intern's roles and responsibilities, weekly activity log, project description, and detailed technical tasks performed.
+    \item \textbf{Chapter 4 --- Conclusion and Learning Outcomes:} Summarizes the degree to which objectives were fulfilled and the technical and professional competencies acquired.
+    \item \textbf{References and Appendices:} Lists cited sources in APA 7th edition format, followed by supplementary application screenshots.
 \end{itemize}
