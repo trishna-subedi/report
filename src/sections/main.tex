@@ -37,16 +37,14 @@
 ]{geometry}
 
 % ---------------------------------------------------------------------
-% 3. Paragraphs — justified, 1.5 line spacing, 0.5in first-line indent
+% 3. Paragraphs — justified, 1.5 line spacing, 0pt indent, 6pt skip
 %    Open decision D2: 1.43 reproduces Word's "1.5 lines" for TNR 12pt.
-%    Open decision D3: indent style.
 % ---------------------------------------------------------------------
 \usepackage{setspace}
-\usepackage{indentfirst}
 \usepackage{microtype}
 \setstretch{1.43}
-\setlength{\parindent}{0.5in}
-\setlength{\parskip}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
 \setlength{\emergencystretch}{3em}   % stop overfull lines with justified text
 
 % ---------------------------------------------------------------------
@@ -55,16 +53,22 @@
 \usepackage{titlesec}
 \titleformat{\chapter}[display]
   {\centering\bfseries\fontsize{16}{19}\selectfont}
-  {}{0pt}{}
+  {\chaptername\ \thechapter}
+  {4pt}
+  {}
 \titleformat{\section}
   {\normalfont\bfseries\fontsize{14}{17}\selectfont}
-  {}{0pt}{}
+  {\thesection\quad}
+  {0pt}
+  {}
 \titleformat{\subsection}
   {\normalfont\bfseries\fontsize{12}{14}\selectfont}
-  {}{0pt}{}
-\titlespacing*{\chapter}{0pt}{0pt}{30pt}
-\titlespacing*{\section}{0pt}{18pt}{8pt}
-\titlespacing*{\subsection}{0pt}{12pt}{6pt}
+  {\thesubsection\quad}
+  {0pt}
+  {}
+\titlespacing*{\chapter}{0pt}{0pt}{18pt}
+\titlespacing*{\section}{0pt}{12pt}{4pt}
+\titlespacing*{\subsection}{0pt}{8pt}{3pt}
 
 % ---------------------------------------------------------------------
 % 5. Figures and tables — caption below figures, above tables,

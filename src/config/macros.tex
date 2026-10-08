@@ -1,0 +1,72 @@
+\newcommand{\PrelimHeading}[1]{%
+  \clearpage
+  \thispagestyle{plain}
+  {\noindent\bfseries\fontsize{16}{18}\selectfont #1\par}
+  \vspace{1.5\baselineskip}
+}
+
+\newcommand{\PrelimEntry}[1]{}
+
+\newcommand{\ChapterSection}[1]{%
+  \section{#1}
+}
+
+\newcommand{\ChapterSubsection}[1]{%
+  \subsection{#1}
+}
+
+\newcommand{\DashedSignatureLine}[1]{%
+  \noindent\makebox[#1][l]{%
+    \xleaders\hbox{-\kern0.5pt}\hfill\kern0pt%
+  }%
+}
+
+\newcommand{\SignatureBlock}[5]{%
+  \vspace{2\baselineskip}
+  \DashedSignatureLine{6cm}\\
+  #1\\
+  #2\\
+  #3\\
+  #4\\
+  #5
+}
+
+\newcommand{\TitleCaseLine}[1]{%
+  \begin{center}
+    \bfseries\fontsize{14}{16}\selectfont\MakeUppercase{#1}
+  \end{center}
+}
+
+\newcommand{\CenteredBodyLine}[1]{%
+  \begin{center}
+    \fontsize{14}{16}\selectfont #1
+  \end{center}
+}
+
+\newcommand{\UseIndentedPars}{%
+  \setlength{\parindent}{1.27cm}%
+  \setlength{\parskip}{0pt}%
+}
+
+\newcommand{\UseNoIndentPars}{%
+  \setlength{\parindent}{0pt}%
+  \setlength{\parskip}{0.5\baselineskip}%
+}
+
+\newcommand{\CenteredTOC}{%
+  \PrelimHeading{Table of Contents}%
+  \PrelimEntry{Table of Contents}%
+  \tableofcontents
+}
+
+\newcommand{\CenteredLOF}{%
+  \PrelimHeading{List of Figures}%
+  \PrelimEntry{List of Figures}%
+  \listoffigures
+}
+
+\newcommand{\CenteredLOT}{%
+  \PrelimHeading{List of Tables}%
+  \PrelimEntry{List of Tables}%
+  \listoftables
+}

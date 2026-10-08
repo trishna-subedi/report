@@ -1,0 +1,158 @@
+\usepackage[left=1.25in,right=1in,top=1in,bottom=1in,footskip=1.2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{tabularx}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\usepackage{xltabular}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{caption}
+\usepackage{ragged2e}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{import}
+\usepackage{csquotes}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+\usepackage[backend=biber,style=ieee]{biblatex}
+\usepackage{chngcntr}
+
+\usetikzlibrary{arrows.meta,positioning,calc,fit,backgrounds,shadows.blur,shapes.geometric}
+
+\counterwithin{figure}{chapter}
+\counterwithin{table}{chapter}
+
+\newfontfamily\nepalifont[
+  Path=assets/kalimati-regular/,
+  Extension=.ttf,
+  Script=Devanagari
+]{Kalimati}
+\newfontfamily\preetifont[
+  Path=assets/Preeti/,
+  Extension=.TTF,
+  AutoFakeBold=1.5
+]{Preeti}
+\setmainfont{Times New Roman}
+\onehalfspacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5\baselineskip}
+\setlength{\emergencystretch}{3em}
+\graphicspath{{assets/images/}{assets/pdf/}}
+\urlstyle{same}
+\raggedbottom
+
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@fpsep}{12pt plus 2pt minus 2pt}
+\setlength{\@fpbot}{0pt plus 1fil}
+\makeatother
+
+\captionsetup{
+  font={bf,normalsize},
+  labelfont={bf,normalsize},
+  textfont={bf,normalsize},
+  justification=centering,
+  singlelinecheck=true
+}
+
+\renewcommand{\contentsname}{TABLE OF CONTENTS}
+\renewcommand{\listtablename}{LIST OF TABLES}
+\renewcommand{\listfigurename}{LIST OF FIGURES}
+\renewcommand{\chaptername}{CHAPTER}
+
+\titleformat{\chapter}[display]
+  {\normalfont}
+  {\filcenter\bfseries\fontsize{16}{18}\selectfont\MakeUppercase{\chaptername\ \thechapter}}
+  {0.75\baselineskip}
+  {\bfseries\fontsize{16}{18}\selectfont\thechapter.\ \MakeUppercase}
+
+\titleformat{name=\chapter,numberless}[display]
+  {\normalfont\filcenter}
+  {\bfseries\fontsize{16}{18}\selectfont}
+  {0pt}
+  {\bfseries\fontsize{16}{18}\selectfont}
+
+\titlespacing*{\chapter}{0pt}{0pt}{1.5\baselineskip}
+
+\titleformat{\section}
+  {\normalfont\bfseries\fontsize{14}{16}\selectfont}
+  {\thesection}
+  {0.75em}
+  {}
+
+\titleformat{\subsection}
+  {\normalfont\bfseries\fontsize{12}{14}\selectfont}
+  {\thesubsection}
+  {0.75em}
+  {}
+
+\titleformat{\subsubsection}
+  {\normalfont\bfseries\fontsize{12}{14}\selectfont}
+  {\thesubsubsection}
+  {0.75em}
+  {}
+
+\titlespacing*{\section}{0pt}{1.0\baselineskip}{0.5\baselineskip}
+\titlespacing*{\subsection}{0pt}{0.75\baselineskip}{0.35\baselineskip}
+\titlespacing*{\subsubsection}{0pt}{0.5\baselineskip}{0.25\baselineskip}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
+
+% Suppress tocloft's built-in titles — handled by custom commands in macros.tex
+\makeatletter
+\renewcommand{\@cftmaketoctitle}{}
+\renewcommand{\@cftmakeloftitle}{}
+\renewcommand{\@cftmakelottitle}{}
+\makeatother
+
+\renewcommand{\cftchapfont}{\bfseries}
+\renewcommand{\cftchappagefont}{\bfseries}
+\renewcommand{\cftchappresnum}{}
+\renewcommand{\cftchapaftersnum}{. }
+\setlength{\cftchapnumwidth}{2.5em}
+\setlength{\cftbeforechapskip}{0.75\baselineskip}
+\setlength{\cftbeforesecskip}{0pt}
+
+\renewcommand{\cftsecfont}{\bfseries}
+\renewcommand{\cftsecpagefont}{\bfseries}
+
+\setlength{\cftbeforetabskip}{0pt}
+\setlength{\cftbeforefigskip}{0pt}
+\renewcommand{\cfttabfont}{\normalfont}
+\renewcommand{\cftfigfont}{\normalfont}
+\renewcommand{\cfttabpagefont}{\normalfont}
+\renewcommand{\cftfigpagefont}{\normalfont}
+
+\renewcommand{\cfttabpresnum}{\bfseries Table }
+\renewcommand{\cftfigpresnum}{\bfseries Figure }
+\renewcommand{\cfttabaftersnum}{: }
+\renewcommand{\cftfigaftersnum}{: }
+\setlength{\cfttabnumwidth}{5.5em}
+\setlength{\cftfignumwidth}{6em}
+
+\DefineBibliographyStrings{english}{
+  bibliography = {REFERENCES}
+}
+
+\DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{titlecase}{#1}
+
+\setlength{\bibitemsep}{\baselineskip}
+\setlength{\bibhang}{1.27cm}
+\appto\biburlsetup{%
+  \def\UrlBreaks{\do\/\do\-\do\_\do\?\do\&\do\=\do\#}%
+}
+
+\AtBeginBibliography{%
+  \fontsize{12}{18}\selectfont
+  \sloppy
+}
