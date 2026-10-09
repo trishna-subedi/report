@@ -55,10 +55,22 @@
 % 4. Headings — chapter 16pt, section 14pt, sub-section 12pt, all bold
 % ---------------------------------------------------------------------
 \usepackage{titlesec}
+\usepackage{titletoc}
+
+\renewcommand{\chaptername}{CHAPTER}
+\renewcommand{\contentsname}{TABLE OF CONTENTS}
+\renewcommand{\listfigurename}{LIST OF FIGURES}
+\renewcommand{\listtablename}{LIST OF TABLES}
+
 \titleformat{\chapter}[display]
   {\centering\bfseries\fontsize{16}{19}\selectfont}
   {\chaptername\ \thechapter}
   {4pt}
+  {}
+\titleformat{name=\chapter,numberless}
+  {\centering\bfseries\fontsize{16}{19}\selectfont}
+  {}
+  {0pt}
   {}
 \titleformat{\section}
   {\normalfont\bfseries\fontsize{14}{17}\selectfont}
@@ -71,8 +83,40 @@
   {0pt}
   {}
 \titlespacing*{\chapter}{0pt}{0pt}{18pt}
+\titlespacing*{name=\chapter,numberless}{0pt}{0pt}{18pt}
 \titlespacing*{\section}{0pt}{12pt}{4pt}
 \titlespacing*{\subsection}{0pt}{8pt}{3pt}
+
+% Table of Contents layout (titletoc)
+\titlecontents{chapter}[0pt]
+  {\vspace{0.8em}\bfseries}
+  {\chaptername\ \thecontentslabel:\quad}
+  {}
+  {\titlerule*[0.75pc]{.}\contentspage}
+
+\titlecontents{section}[2.5em]
+  {\normalfont}
+  {\thecontentslabel\quad}
+  {}
+  {\titlerule*[0.75pc]{.}\contentspage}
+
+\titlecontents{subsection}[5em]
+  {\normalfont}
+  {\thecontentslabel\quad}
+  {}
+  {\titlerule*[0.75pc]{.}\contentspage}
+
+\titlecontents{figure}[2.5em]
+  {\normalfont}
+  {\contentslabel{2.5em}}
+  {}
+  {\titlerule*[0.75pc]{.}\contentspage}
+
+\titlecontents{table}[2.5em]
+  {\normalfont}
+  {\contentslabel{2.5em}}
+  {}
+  {\titlerule*[0.75pc]{.}\contentspage}
 
 % ---------------------------------------------------------------------
 % 5. Figures and tables — caption below figures, above tables,

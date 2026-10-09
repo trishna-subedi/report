@@ -45,28 +45,33 @@
 \input{front-matter/cover}
 
 % ---------------------------------------------------------------------
-%  Roman-numbered front matter, starting at i on the first certificate page
-%  NOTE: \frontmatter does not exist in the report class; it is done by hand.
+%  Certificate pages — unnumbered
 % ---------------------------------------------------------------------
 \clearpage
-\pagenumbering{roman}
+\pagestyle{empty}
 
 \input{front-matter/certificate-company-mentor}
 \input{front-matter/certificate-supervisor}
 \input{front-matter/letter-of-approval}
 \input{front-matter/declaration}
+
+% ---------------------------------------------------------------------
+%  Front matter numbering starts from Acknowledgement (i, ii, ...)
+% ---------------------------------------------------------------------
+\clearpage
+\pagestyle{fancy}
+\pagenumbering{roman}
+\setcounter{page}{1}
+
 \input{front-matter/acknowledgement}
 \input{front-matter/abstract}
 
 \clearpage
 \tableofcontents
-\addcontentsline{toc}{chapter}{Table of Contents}
 \clearpage
 \listoffigures
-\addcontentsline{toc}{chapter}{List of Figures}
 \clearpage
 \listoftables
-\addcontentsline{toc}{chapter}{List of Tables}
 \clearpage
 \input{front-matter/list-of-abbreviations}
 
@@ -91,7 +96,6 @@
 %  Back matter — continues the arabic numbering
 % ---------------------------------------------------------------------
 \input{back-matter/references}
-\input{back-matter/bibliography}
 \input{back-matter/appendices}
 
 \end{document}
