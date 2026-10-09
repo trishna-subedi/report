@@ -351,7 +351,7 @@ try {
 
     $texLog = Join-Path $buildDir "$baseName.log"
     if (Test-Path -LiteralPath $texLog) {
-        $tl = Get-Content -LiteralPath $texLog
+        $tl = @(Get-Content -LiteralPath $texLog)
 
         for ($i = 0; $i -lt $tl.Count; $i++) {
             if ($tl[$i] -match '^\!\s') {
