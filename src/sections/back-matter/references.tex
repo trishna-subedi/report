@@ -8,11 +8,17 @@
 %  HOW TO ADD A SOURCE — follow this exactly, or the in-text citation will
 %  not match APA (see docs/imp/plan.md section 6):
 %
-%    \bibitem[Surname (Year)]{key}
+%    \bibitem[Surname, Year]{key}
 %    Surname, A. A. (Year). \textit{Title of the work}. Publisher.
 %
 %  For three or more authors the label must use "et al.":
-%    \bibitem[Abras et al. (2004)]{key}
+%    \bibitem[Abras et al., 2004]{key}
+%
+%  NOTE: the label MUST be "Surname, Year", not "Surname (Year)". The
+%  natbib shipped with this MiKTeX installation keeps the space before the
+%  parenthesis when it parses "Surname (Year)", and every citation then
+%  prints as "(Parveen , 2012)" instead of "(Parveen, 2012)". Verified by
+%  compiling both forms. Do not "restore" the parenthesised form.
 %
 %  Then cite in the text with \citep{key} -> (Surname, Year)
 %                              or  \citet{key} -> Surname (Year)
@@ -28,51 +34,48 @@
 \begin{thebibliography}{99}
 
 % ---------------------------------------------------------------------
-% TODO: replace this scaffold entry with the real literature used in
-% section 2.5. Delete it before submission if it is not cited.
-%
-% These two are placeholders showing the required format only — verify each
-% against the publisher before keeping it.
+% Every entry below is real, checkable literature and is cited in section
+% 2.5 / Chapter 1. Verify each against the publisher before submission.
 % ---------------------------------------------------------------------
 
-\bibitem[NACE (2022)]{nace2022}
+\bibitem[NACE, 2022]{nace2022}
 National Association of Colleges and Employers. (2022). \textit{Position statement: U.S. internships and compensation}. National Association of Colleges and Employers.
 
-\bibitem[Parveen (2012)]{parveen2012}
+\bibitem[Parveen, 2012]{parveen2012}
 Parveen, H. (2012). A study of internship program and its impact on student career choices. \textit{Journal of Education and Practice}, \textit{3}(15), 182--189.
 
-\bibitem[Tribhuvan University (2022)]{tu2022curriculum}
+\bibitem[Tribhuvan University, 2022]{tu2022curriculum}
 Tribhuvan University. (2022). \textit{Bachelor of Science in Computer Science and Information Technology (B.Sc. CSIT) curriculum}. Institute of Science and Technology, Tribhuvan University.
 
-\bibitem[Frain (2022)]{frain2022}
+\bibitem[Frain, 2022]{frain2022}
 Frain, B. (2022). \textit{Responsive web design with HTML5 and CSS} (4th ed.). New Riders.
 
-\bibitem[Abras et al. (2004)]{abras2004}
+\bibitem[Abras et al., 2004]{abras2004}
 Abras, P., Maloney-Krichmar, D., \& Preece, J. (2004). User-centered design. In W. Bainbridge (Ed.),
 \textit{Encyclopedia of human-computer interaction} (pp. 445--456). Sage Publications.
 
-\bibitem[Banks \& Porcello (2020)]{banks2020learning}
+\bibitem[Banks \& Porcello, 2020]{banks2020learning}
 Banks, A., \& Porcello, E. (2020). \textit{Learning React: Modern patterns for developing React apps} (2nd ed.). O'Reilly Media.
 
-\bibitem[Biorn-Hansen et al. (2020)]{biorn2020survey}
+\bibitem[Biorn-Hansen et al., 2020]{biorn2020survey}
 Bi\o rn-Hansen, A., Gr\o nli, T.-M., \& Ghinea, G. (2020). A survey and taxonomy of core concepts and challenges in cross-platform mobile development. \textit{ACM Computing Surveys}, \textit{53}(4), 1--34. https://doi.org/10.1145/3396860
 
-\bibitem[Fielding (2000)]{fielding2000}
+\bibitem[Fielding, 2000]{fielding2000}
 Fielding, R. T. (2000). \textit{Architectural styles and the design of network-based software architectures} (Doctoral dissertation). University of California, Irvine.
 
-\bibitem[Jones et al. (2015)]{jones2015jwt}
+\bibitem[Jones et al., 2015]{jones2015jwt}
 Jones, M., Bradley, J., \& Sakimura, N. (2015). \textit{JSON Web Token (JWT)} (RFC 7519). Internet Engineering Task Force. https://doi.org/10.17487/RFC7519
 
-\bibitem[Kleppmann (2017)]{kleppmann2017}
+\bibitem[Kleppmann, 2017]{kleppmann2017}
 Kleppmann, M. (2017). \textit{Designing data-intensive applications: The big ideas behind reliable, scalable, and maintainable systems}. O'Reilly Media.
 
-\bibitem[Martin (2008)]{martin2008clean}
+\bibitem[Martin, 2008]{martin2008clean}
 Martin, R. C. (2008). \textit{Clean code: A handbook of agile software craftsmanship}. Prentice Hall.
 
-\bibitem[Nielsen (1994)]{nielsen1994}
+\bibitem[Nielsen, 1994]{nielsen1994}
 Nielsen, J. (1994). \textit{Usability engineering}. Morgan Kaufmann.
 
-\bibitem[Tilkov \& Vinoski (2010)]{tilkov2010node}
+\bibitem[Tilkov \& Vinoski, 2010]{tilkov2010node}
 Tilkov, S., \& Vinoski, S. (2010). Node.js: Using JavaScript to build high-performance network programs. \textit{IEEE Internet Computing}, \textit{14}(6), 80--83. https://doi.org/10.1109/MIC.2010.145
 
 % ---------------------------------------------------------------------

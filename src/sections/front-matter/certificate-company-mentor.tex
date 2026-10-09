@@ -1,57 +1,57 @@
 % =====================================================================
 %  Mentor's Recommendation from the Company
 %
-%  *** TEXT MISSING — THIS PAGE CANNOT BE COMPLETED YET ***
+%  Content written by us (the page was absent from data/documents/front.pdf
+%  and from docs/zz/Internship_Report_Tirshana_Subedi.docx). Structure
+%  follows the standard form for this certificate: who the intern is and
+%  what she did -> performance -> recommendation for evaluation.
 %
-%  docs/guidelines/guidelines.md requires three certificate pages:
-%    (i)  Mentor's Recommendation from the Company   -> this file
-%    (ii) Supervisor's Recommendation      -> certificate-supervisor.tex
-%    (iii) Examiners' Approval Letter      -> letter-of-approval.tex
+%  FACTS USED — all traceable, nothing invented:
+%    role, unit, twelve weeks, tasks, coordination with management/trainers/
+%    front desk -> data/information/role_and_responsibility.md,
+%                  data/information/internship_information.md,
+%                  data/information/weekly_logs.md
+%    app name "Alcedo" -> data/project/github_repository.md
+%  signatory Mr. Krishna Subedi -> CONFIRMED by the author (Oct 2026);
+%                  he is the "Mentor" in data/information/company_information.md
+%                  and "Internship Mentor" in data/information/front_matter.md.
+%    role/org/site -> data/information/neryva_collaboration.md
 %
-%  Neither data/documents/front.pdf nor the approved Word draft
-%  (docs/zz/Internship_Report_Tirshana_Subedi.docx) contains this page —
-%  the Word file starts straight at the Supervisor's Recommendation.
-%  The wording must be supplied; the signatory is either the internship
-%  mentor Mr. Krishna Subedi (data/information/company_information.md)
-%  or the gym management, Neeraj Tiwari (data/information/front_matter.md)
-%  — OPEN QUESTION, confirm before filling in.
-%
-%  The page is laid out like the other certificate pages (header, logo,
-%  underlined 14pt title) so it slots in correctly once the text arrives.
-%  This page carries roman page number i (it is the first certificate page).
+%  LETTERHEAD: the Neryva company emblem (issuer branding), NOT the campus
+%  and NOT Power Gym, decided by the author (Oct 2026). No company name or
+%  campus text at the top — the emblem stands alone. PNG rendered from the
+%  author-supplied SVG (src/data/figures/neryva_logo.svg).
+%  Certificate pages are UNNUMBERED; roman numbering starts at the
+%  Acknowledgement (i).
 % =====================================================================
 \clearpage
 
 {\centering
-{\bfseries\fontsize{16}{19.3}\selectfont \CampusFullName\par}
-\vspace{3pt}
-{\bfseries\fontsize{16}{19.3}\selectfont \UniversityName\par}
-\vspace{3pt}
-{\bfseries\fontsize{16}{19.3}\selectfont \InstituteName\par}
-\vspace{10pt}
-\includegraphics[width=1.04in]{\LogoFile}\par
-\vspace{12pt}
+% Company emblem only at the top — no company name, no campus header.
+% Source file: src/data/figures/neryva_logo.svg (author-supplied brand art),
+% rendered to neryva_logo.png (2400 px) because XeLaTeX cannot read SVG.
+\includegraphics[width=1.2in]{neryva_logo.png}\par
+\vspace{14pt}
 {\setstretch{1}\bfseries\fontsize{14}{16.1}\selectfont\underline{MENTOR'S RECOMMENDATION}\par}
 \vspace{12pt}
 
 }
 
-% TODO: paste the approved wording here once received. It should follow the
-% same pattern as the supervisor's recommendation: who the report was
-% prepared by, what the intern did, and a recommendation for evaluation.
-{\itshape [Placeholder — the company mentor's recommendation has not yet
-been supplied. This page is required by the university guideline and must
-be replaced with the approved text before submission.]}
+% --- body --------------------------------------------------------------
+This is to certify that Ms.~\ReportAuthor, a student of the \ProgramName\ program at \CampusFullName, \UniversityName, has successfully completed a twelve-week internship at \CompanyName\ as a \InternPosition\ in the Digitalization Unit.
+\vspace{6pt}
 
-\vspace{62.1pt}
+During the internship she worked under my guidance on Alcedo, the mobile application developed at \WorkLocation\ for \CompanyName. Her responsibilities included implementing the user interface and navigation of the application, connecting the implemented screens with the backend services for User Management, Workout Management, and Feature Management, integrating the application's feature flags, and testing and correcting the implemented screens and functionalities. She also coordinated with the gym management, trainers, and front-desk staff to collect the information required for the application.
+\vspace{6pt}
+
+She has completed the assigned duties to our satisfaction and has carried out her work with sincerity and professionalism. I recommend this report for final evaluation and wish her success in her future academic and professional career.
+
+\vspace{13pt}
 \vspace{13.8pt}
 \vspace{13.45pt}
 \noindent\rule{1.91in}{2.25pt}
 \vspace{13pt}
 
-% OPEN QUESTION: confirm the signatory — internship mentor or gym management.
 {\bfseries\fontsize{12}{14.5}\selectfont \CompanyMentorTitle\ \CompanyMentor\par}
 \vspace{5.3pt}
-{\bfseries\fontsize{12}{14.5}\selectfont Internship Mentor\par}
-\vspace{5.45pt}
-{\bfseries\fontsize{12}{14.5}\selectfont \CompanyName\par}
+{\bfseries\fontsize{12}{14.5}\selectfont \CompanyMentorRole, \CompanyMentorOrg\par}

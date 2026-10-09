@@ -34,9 +34,10 @@ Power Gym maintains an online presence through its official Facebook page (``Pow
         Organization Type & Fitness Center \\
         Location & Budibazar, Pokhara-26, Kaski, Nepal \\
         Operating Hours & 5:00 AM -- 9:00 PM (Monday through Sunday) \\
-        Facebook Page & Power Gym Budibazar Pokhara ($\sim$1.7K Followers) \\
+        Facebook Page & Power Gym Budibazar Pokhara ($\sim$1.7K followers) \\
         Contact Phone & 9846904440 \\
-        Company Mentor & Mr.~Krishna Subedi \\
+        Development Partner & Neryva (https://neryva.com) \\
+        Internship Mentor & Mr.~Krishna Subedi, Senior Software Engineer, Neryva \\
         \hline
     \end{tabular}
 \end{table}
@@ -48,7 +49,7 @@ The organizational structure of Power Gym Budibazar Pokhara is led by the Gym Ow
     \item \textbf{Front Desk Staff:} Handles member reception, inquiries, membership registration, and fee processing.
     \item \textbf{Trainer Team:} Comprises fitness trainers, personal coaches, and a Zumba instructor who guide members in workouts and exercise techniques.
     \item \textbf{Maintenance Team:} Responsible for facility cleanliness and equipment maintenance.
-    \item \textbf{Digitalization Unit:} A technical division responsible for developing and maintaining the organization's digital platforms, including the mobile application project under which this internship was conducted.
+    \item \textbf{Digitalization Unit:} A technical division responsible for the organization's digital platforms, including the mobile application project carried out with Neryva, a software company engaged to provide development engineers for the application.
 \end{itemize}
 
 The organizational hierarchy is illustrated in Figure~\ref{fig:org-hierarchy}.
@@ -78,6 +79,8 @@ Power Gym Budibazar Pokhara operates in the fitness and wellness sector. Its wor
 \section{Description of Intern Department/Unit}
 The internship was conducted within the \textbf{Digitalization Unit} of Power Gym Budibazar Pokhara. This unit was established to develop and maintain digital solutions for the organization, addressing the limitations of manual reception logs and static social media communication.
 
+The organization engaged Neryva (https://neryva.com), a software company, for the development of the mobile application, with Power Gym Budibazar Pokhara as the client. The development work is carried out at Neryva Lab, and the intern worked on the project under the guidance of Mr.~Krishna Subedi, Senior Software Engineer at Neryva.
+
 During the internship, the unit coordinated with other departments:
 \begin{itemize}
     \item Regular meetings with the Gym Manager to review feature requirements and validate design decisions.
@@ -85,7 +88,7 @@ During the internship, the unit coordinated with other departments:
     \item Consultation with trainers to catalog exercises, muscle groups, and workout structures for the application database.
 \end{itemize}
 
-Within this unit, the intern served as \textbf{Mobile Application Developer Intern} under the guidance of company mentor Mr.~Krishna Subedi. The assignment involved implementing the client-side user interface in React Native and Expo, establishing local SQLite persistence via Drizzle ORM, managing Redux state, and developing backend modules in NestJS and MongoDB. The internship details are presented in Table~\ref{tab:internship-details}.
+Within this unit, the intern served as \textbf{Mobile Application Developer Intern}, working on the mobile application project under the guidance of Mr.~Krishna Subedi, Senior Software Engineer at Neryva. The assignment involved implementing the client-side user interface in React Native and Expo, establishing local SQLite persistence via Drizzle ORM, managing Redux state, and developing backend modules in NestJS and MongoDB. The internship details are presented in Table~\ref{tab:internship-details}.
 
 \begin{table}[htbp]
     \centering
@@ -101,8 +104,9 @@ Within this unit, the intern served as \textbf{Mobile Application Developer Inte
         Academic Institution & Prithvi Narayan Campus, Tribhuvan University \\
         Duration & 12 Weeks (July -- September) \\
         Schedule & Monday to Friday (6 Hours per Day, 30 Hours/Week) \\
-        Company Mentor & Mr.~Krishna Subedi \\
-        Academic Supervisor & Mr.~Devilal Timilsina \\
+        Development Work & Carried out at Neryva Lab \\
+        Internship Mentor & Mr.~Krishna Subedi, Senior Software Engineer, Neryva \\
+        Internship Supervisor & \SupervisorTitle\ \SupervisorName \\
         \hline
     \end{tabular}
 \end{table}
@@ -119,7 +123,7 @@ For navigation, file-based routing frameworks like Expo Router derive screen hie
 \subsection{User-Centered Design and Design Systems}
 The usability of personal tracking applications depends on interface coherence and user experience design \citep{abras2004, nielsen1994}. In fitness applications, interfaces must provide immediate readability and intuitive interaction patterns.
 
-Modern design systems use centralized design tokens---semantic color palettes, typography scales, spacing units---to maintain visual consistency \citep{frain2022}. Building atomic components (buttons, cards, input fields) from shared tokens ensures visual harmony across screens and supports dynamic theme switching without duplicating layout logic.
+Modern design systems use centralized design tokens (semantic color palettes, typography scales, and spacing units) to maintain visual consistency \citep{frain2022}. Building atomic components (buttons, cards, input fields) from shared tokens ensures visual harmony across screens and supports dynamic theme switching without duplicating layout logic.
 
 \subsection{Client-Side State Management}
 As mobile applications grow in complexity, managing state through component prop-drilling creates tight coupling and unnecessary re-renders \citep{banks2020learning}. Redux Toolkit establishes a single source of truth with unidirectional data flow, where state modifications are dispatched through actions and processed by deterministic reducers. Listener middlewares enable asynchronous side-effects (such as local storage synchronization) outside the UI rendering thread.
