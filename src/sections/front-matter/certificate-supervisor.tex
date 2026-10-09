@@ -1,43 +1,62 @@
 % =====================================================================
 %  Supervisor's Recommendation
-%  Text taken from data/documents/front.pdf page 2.
-%  This is the first roman-numbered page (i).
 %
-%  Signature block: leave blank for hand signing. Rule lines are drawn
-%  with \rule so the student can sign above them.
+%  Verbatim from docs/zz/Internship_Report_Tirshana_Subedi.docx page 2.
+%  Layout facts from the Word file:
+%    - institution lines bold 16pt, logo BELOW them at 1.04in wide
+%    - title bold 14pt, underlined, centred
+%    - body justified, 1.5 line spacing, 6pt paragraph gap
+%    - signature block is LEFT aligned under a 1.91in / 2.25pt rule
+%      (Word draws it as a floating "Straight Connector" shape)
+%    - "B.Sc.CSIT Program" is written exactly like that in the Word file
+%
+%  This page is roman-numbered i in our build (the guideline requires
+%  roman numbering from the first certificate page; the Word file leaves
+%  pages 2-4 unnumbered — see docs/imp/plan.md).
 % =====================================================================
 \clearpage
-\begin{center}
-\includegraphics[width=1.1in]{tribhuwan_university_logo.png}\\[0.3in]
-{\bfseries Prithvi Narayan Campus}\\
-{\bfseries Tribhuvan University}\\
-{\bfseries Institute of Science and Technology}
-\end{center}
 
-\vspace{0.4in}
+% --- header ------------------------------------------------------------
+{\centering
+{\bfseries\fontsize{16}{19.3}\selectfont \CampusFullName\par}
+\vspace{3pt}
+{\bfseries\fontsize{16}{19.3}\selectfont \UniversityName\par}
+\vspace{3pt}
+{\bfseries\fontsize{16}{19.3}\selectfont \InstituteName\par}
+\vspace{10pt}
+\includegraphics[width=1.04in]{\LogoFile}\par
+\vspace{12pt}
+% Word has BOTH the logo (anchored, wrap space) and an empty paragraph
+% after it on this page — the letter/declaration pages have only the
+% logo paragraph, so their title sits 14pt higher.
+\vspace{19.7pt}
+{\setstretch{1}\bfseries\fontsize{14}{16.1}\selectfont\underline{SUPERVISOR'S RECOMMENDATION}\par}
+\vspace{6.4pt}
 
-\begin{center}
-{\bfseries\fontsize{14}{17}\selectfont SUPERVISOR'S RECOMMENDATION}
-\end{center}
+}
 
-\vspace{0.2in}
+% --- body --------------------------------------------------------------
+I hereby recommend this internship report prepared under my supervision by \ReportAuthor, a \ProgramName\ student at \CampusFullName, in partial fulfillment of the\\
+requirements for the B.Sc. CSIT degree. During her internship, I observed her\\
+consistent dedication and steady progress in all assigned tasks. Her work meets the\\
+academic and professional standards set by the \InstituteName\ at\\
+\UniversityName.
+\vspace{6pt}
 
-I hereby recommend this internship report prepared under my supervision by Tirshana Subedi, a
-B.Sc. CSIT student at Prithvi Narayan Campus, in partial fulfillment of the requirements for the
-B.Sc. CSIT degree. During her internship, I observed her consistent dedication and steady progress
-in all assigned tasks. Her work meets the academic and professional standards set by the Institute of
-Science and Technology at Tribhuvan University.
+I confirm that she has satisfactorily completed her internship under my guidance and\\
+recommend this report for final evaluation.
 
-I confirm that she has satisfactorily completed her internship under my guidance and recommend this
-report for final evaluation.
+% --- signature block ----------------------------------------------------
+% Word: three 1.5-spaced empty lines, one single-spaced empty line, then
+% the floating rule 13.45pt into the next paragraph, then the names.
+\vspace{47.8pt}
+\vspace{13.8pt}
+\vspace{13.45pt}
+\noindent\rule{1.91in}{2.25pt}
+\vspace{13pt}
 
-\vspace{1.2in}
-
-\begin{flushright}
-\begin{tabular}{@{}c@{}}
-\rule{2.6in}{0.4pt}\\
-\textbf{Mr. Gyaneshwor Dhungana}\\
-Internship Supervisor\\
-B.Sc. CSIT Program
-\end{tabular}
-\end{flushright}
+\textbf{\fontsize{12}{14.5}\selectfont \SupervisorTitle\ \SupervisorName}\par
+\vspace{5.3pt}
+\textbf{\fontsize{12}{14.5}\selectfont Internship Supervisor}\par
+\vspace{5.45pt}
+\textbf{\fontsize{12}{14.5}\selectfont B.Sc.CSIT Program}\par

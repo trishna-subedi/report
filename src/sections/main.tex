@@ -6,154 +6,38 @@
 %      latexmk -xelatex main.tex
 %  or run  .\build.ps1
 %
-%  Format rules come from docs/guidelines/guidelines.md
+%  Format specification:  config/preamble.tex   (input below)
+%  Names and numbers:     config/metadata.tex   (input below)
+%  Helpers:               config/macros.tex     (input below)
+%  Format rules:          docs/guidelines/guidelines.md
 %  Plan and open decisions: docs/imp/plan.md
-%  Content sources:        docs/project_detail/
+%  Content sources:       docs/project_detail/
 % =====================================================================
 \documentclass[12pt,a4paper,oneside]{report}
 
-% ---------------------------------------------------------------------
-% 1. Fonts — Times New Roman (real system font, XeLaTeX)
-%    unicode-math gives Times-compatible maths. Without it the maths used
-%    in the architecture diagram pulls in Computer Modern (CMSY/CMEX) and the
-%    guideline's "Times New Roman only" requirement is broken.
-% ---------------------------------------------------------------------
-\usepackage{fontspec}
-\setmainfont{Times New Roman}
-\usepackage{unicode-math}
-\setmathfont{TeX Gyre Termes Math}
-
-% ---------------------------------------------------------------------
-% 2. Page geometry — A4, top 1in, bottom 1in, right 1in, left 1.25in
-%    Open decision D1: guideline states "1" without a unit; inches assumed.
-% ---------------------------------------------------------------------
-\usepackage[
-  a4paper,
-  left=1.25in,
-  right=1in,
-  top=1in,
-  bottom=1in,
-  footskip=0.35in
-]{geometry}
-
-% ---------------------------------------------------------------------
-% 3. Paragraphs — justified, 1.5 line spacing, 0pt indent, 6pt skip
-%    Open decision D2: 1.43 reproduces Word's "1.5 lines" for TNR 12pt.
-% ---------------------------------------------------------------------
-\usepackage{setspace}
-\usepackage{microtype}
-\setstretch{1.43}
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt}
-\setlength{\emergencystretch}{3em}   % stop overfull lines with justified text
-
-% ---------------------------------------------------------------------
-% 4. Headings — chapter 16pt, section 14pt, sub-section 12pt, all bold
-% ---------------------------------------------------------------------
-\usepackage{titlesec}
-\titleformat{\chapter}[display]
-  {\centering\bfseries\fontsize{16}{19}\selectfont}
-  {\chaptername\ \thechapter}
-  {4pt}
-  {}
-\titleformat{\section}
-  {\normalfont\bfseries\fontsize{14}{17}\selectfont}
-  {\thesection\quad}
-  {0pt}
-  {}
-\titleformat{\subsection}
-  {\normalfont\bfseries\fontsize{12}{14}\selectfont}
-  {\thesubsection\quad}
-  {0pt}
-  {}
-\titlespacing*{\chapter}{0pt}{0pt}{18pt}
-\titlespacing*{\section}{0pt}{12pt}{4pt}
-\titlespacing*{\subsection}{0pt}{8pt}{3pt}
-
-% ---------------------------------------------------------------------
-% 5. Figures and tables — caption below figures, above tables,
-%    both centred and bold 12pt
-% ---------------------------------------------------------------------
-\usepackage{graphicx}
-\usepackage{float}
-\usepackage{caption}
-\DeclareCaptionFont{repcap}{\bfseries\fontsize{12}{14}\selectfont}
-\captionsetup{
-  font=repcap,
-  justification=centering,
-  singlelinecheck=false,
-  labelsep=period
-}
-\captionsetup[figure]{position=bottom}
-\captionsetup[table]{position=top}
-
-% ---------------------------------------------------------------------
-% 6. Tables
-% ---------------------------------------------------------------------
-\usepackage{array}
-\usepackage{booktabs}
-\usepackage{tabularx}
-\usepackage{longtable}
-
-% ---------------------------------------------------------------------
-% 7. Lists
-% ---------------------------------------------------------------------
-\usepackage{enumitem}
-\setlist[itemize]{leftmargin=0.5in,itemsep=2pt,topsep=4pt}
-\setlist[enumerate]{leftmargin=0.5in,itemsep=2pt,topsep=4pt}
-
-% ---------------------------------------------------------------------
-% 8. Source code listings for the appendices
-% ---------------------------------------------------------------------
-\usepackage{xcolor}
-\usepackage{listings}
-\lstset{
-  basicstyle=\ttfamily\small,
-  breaklines=true,
-  breakatwhitespace=true,
-  frame=single,
-  captionpos=b,
-  numbers=left,
-  numberstyle=\tiny\color{gray},
-  showstringspaces=false
-}
-
-% ---------------------------------------------------------------------
-% 9. Page numbers — bottom centre
-% ---------------------------------------------------------------------
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-\fancyfoot[C]{\thepage}
-
-% ---------------------------------------------------------------------
-% 10. Citations — natbib with a hand-written APA reference list
-%     See plan section 6: every \bibitem needs an explicit APA label.
-% ---------------------------------------------------------------------
-\usepackage{natbib}
-
-% ---------------------------------------------------------------------
-% 11. Hyperlinks — loaded last, invisible
-% ---------------------------------------------------------------------
-\usepackage[hidelinks]{hyperref}
-
-% ---------------------------------------------------------------------
-% 12. Image search paths
-%     Resolved relative to this directory, because the build runs with the
-%     working directory set to src/sections (see script/build.ps1).
-%       figures/      -> src/sections/figures  (images added later, e.g.
-%                       application screenshots from the project repository)
-%       ../data/figures -> the report's prepared images: logo, organization
-%                       hierarchy diagram, screen image, university logo.
-% ---------------------------------------------------------------------
-\graphicspath{{figures/}{../data/figures/}}
+\input{../config/preamble}
+\input{../config/metadata}
+\input{../config/macros}
 
 % =====================================================================
 %                              DOCUMENT
 % =====================================================================
 \begin{document}
+
+% ---------------------------------------------------------------------
+%  Front matter geometry.
+%    The approved Word draft (docs/zz/Internship_Report_Tirshana_Subedi.docx)
+%    lays the front pages out with a 1.5in left margin; the guideline's
+%    1.25in is restored for Chapter 1 onwards with \restoregeometry below.
+%    Front matter also uses \parskip 0pt: every gap is an explicit
+%    \vspace copied from the Word draft's paragraph spacing.
+% ---------------------------------------------------------------------
+\newgeometry{top=1in,bottom=1in,left=1.5in,right=1in,footskip=0.35in}
+\setlength{\parskip}{0pt}
+% Word does not hyphenate on these pages, and hyphenation changes where
+% justified lines break, which shifts every word on the line. Match it.
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
 
 % ---------------------------------------------------------------------
 %  Cover page — no page number (titlepage sets the style to empty)
@@ -187,9 +71,14 @@
 \input{front-matter/list-of-abbreviations}
 
 % ---------------------------------------------------------------------
-%  Main matter — arabic numbering restarting at 1
+%  Main matter — arabic numbering restarting at 1, guideline margins,
+%  6pt paragraph skip.
 % ---------------------------------------------------------------------
 \clearpage
+\restoregeometry
+\setlength{\parskip}{6pt}
+\hyphenpenalty=50
+\exhyphenpenalty=100
 \pagenumbering{arabic}
 \setcounter{page}{1}
 

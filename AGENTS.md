@@ -51,6 +51,11 @@ everything needed, including what is *not* in the project and what remains uncer
 Approval, Student's Declaration, Acknowledgement), and `data/information/front_matter.md` lists the
 signatories. Together they are the source of truth for all front matter wording.
 
+**The layout source of truth is `docs/zz/Internship_Report_Tirshana_Subedi.docx`** (the same
+approved draft in Word form). The front matter was transcribed and tuned to be pixel-perfect to it
+— every word within 2 pt. Do not re-tune front-matter spacing without re-running the measurement
+(`docs/imp/plan.md` §13 records the method and the traps).
+
 Therefore **the work in `src/sections/` is the main contents — Chapters 1 to 4 — plus the
 Appendices.** The files in `src/sections/front-matter/` exist for one reason only: the guideline
 requires those pages in the submitted PDF, so they are a *verbatim transcription* of `front.pdf`.
@@ -68,9 +73,10 @@ In short: **front matter = already done, transcribe only. Chapters and appendice
 1. **Never invent a fact.** Every statement must trace to `data/information/`,
    `data/documents/front.pdf`, or a verified file in `docs/project_detail/`. If the value is unknown,
    leave a `TODO` comment naming the question. A plausible sentence is worse than a gap.
-2. **Never silently change approved text.** The front matter wording comes from `front.pdf` and
-   `front_matter.md`, which say to use it exactly. Polish grammar elsewhere; do not rewrite names,
-   titles, roll numbers or signatory roles.
+2. **Never silently change approved text.** The front matter wording comes from `front.pdf` /
+   `docs/zz/Internship_Report_Tirshana_Subedi.docx` and `front_matter.md`, which say to use it
+   exactly. Polish grammar elsewhere; do not rewrite names, titles, roll numbers or signatory
+   roles.
 3. **Ask before assuming.** The open questions in §9 are unresolved on purpose. Guessing any of them
    puts incorrect information into a submitted academic document.
 4. **Build after every structural change** and read the page map (§4). Some LaTeX mistakes compile
@@ -283,3 +289,4 @@ A change is complete when:
 | How to cite, format, build; and what broke before | `docs/imp/plan.md` |
 | What the university requires | `docs/guidelines/guidelines.md` |
 | Front matter wording | `data/documents/front.pdf`, `data/information/front_matter.md` |
+| Front matter layout (pixel-perfect target) | `docs/zz/Internship_Report_Tirshana_Subedi.docx`, `docs/imp/plan.md` §13 |

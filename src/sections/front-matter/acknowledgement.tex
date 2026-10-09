@@ -1,39 +1,58 @@
 % =====================================================================
 %  Acknowledgement
-%  Text taken from data/documents/front.pdf page 5.
-%  Signatory block at the bottom right, blank for hand signing.
+%
+%  Verbatim from docs/zz/Internship_Report_Tirshana_Subedi.docx page 5
+%  (section 2 of the Word file: lower-roman page numbering starts here,
+%  but the Word file prints the number only on this page — our build
+%  numbers the whole front matter from i, per the guideline).
+%
+%  Layout facts from the Word file:
+%    - no logo on this page; title bold 16pt, NOT underlined, centred,
+%      12pt below at the top margin
+%    - five justified body paragraphs, 1.5 spacing, 6pt apart
+%    - signature block: four BOLD 12pt lines, left aligned, 1.5 spacing
 % =====================================================================
 \clearpage
-\addcontentsline{toc}{chapter}{Acknowledgement}
 
-I would like to express my sincere gratitude to everyone whose support and cooperation, directly or
-indirectly, helped me complete this internship and prepare this report.
+{\centering
+{\bfseries\fontsize{16}{19.3}\selectfont ACKNOWLEDGEMENT\par}
+\vspace{15.8pt}
 
-First of all, I am thankful to Power Gym Budibazar Pokhara for giving me the opportunity to work as a
-Mobile Application Developer Intern and to build a real mobile application for the gym. I would like
-to thank the gym management, Neeraj Tiwari, for trusting me with this project, for sharing the
-information required for the application, and for giving useful feedback throughout the internship.
+}
 
-I am deeply grateful to my internship mentor, Mr. Krishna Subedi, for his continuous guidance,
-technical suggestions, and encouragement. His support helped me to understand professional development
-practices and to overcome the difficulties I faced while developing the application.
+I would like to express my sincere gratitude to everyone whose support and\\
+cooperation, directly or indirectly, helped me complete this internship and prepare this\\
+report.
+\vspace{6pt}
 
-I would also like to express my sincere appreciation to my internship supervisor, Mr. Gyaneshwor
-Dhungana for his constant supervision, feedback, and academic guidance during the preparation of this
-report. I am also thankful to the Program Director, Mr. Chudamani Subedi, the Department of Computer
-Science and Information Technology, and all the teachers of Prithvi Narayan Campus for the knowledge
-and support that prepared me for this internship.
+First of all, I am thankful to \CompanyName\ for giving me the\\
+opportunity to work as a \InternPosition\ and to build a real mobile\\
+application for the gym. I would like to thank the gym management, \GymManagementName, for\\
+trusting me with this project, for sharing the information required for the application,\\
+and for giving useful feedback throughout the internship.
+\vspace{6pt}
 
-Finally, I would like to thank the trainers and staff of Power Gym Budibazar Pokhara, my friends,
-and my family for their help and motivation during this period.
+I am deeply grateful to my internship mentor, \CompanyMentorTitle\ \CompanyMentor, for his continuous\\
+guidance, technical suggestions, and encouragement. His support helped me to\\
+understand professional development practices and to overcome the difficulties I faced\\
+while developing the application.
+\vspace{6pt}
 
-\vspace{0.8in}
+I would also like to express my sincere appreciation to my internship supervisor, \SupervisorTitle\\
+\SupervisorName\ for his constant supervision, feedback, and academic guidance\\
+during the preparation of this report. I am also thankful to the Program Director, \SupervisorTitle\\
+\HeadOfDepartment, the \DepartmentFullName,\\
+and all the teachers of \CampusFullName\ for the knowledge and support that\\
+prepared me for this internship.
+\vspace{6pt}
 
-\begin{flushright}
-\begin{tabular}{@{}l@{}}
-Tirshana Subedi\\
-B.Sc. CSIT 8th Semester\\
-Roll No: 79011927\\
-Prithvi Narayan Campus
-\end{tabular}
-\end{flushright}
+Finally, I would like to thank the trainers and staff of \CompanyName,\\
+my friends, and my family for their help and motivation during this period.
+
+% --- signature block ----------------------------------------------------
+% Word: 6pt paragraph gap + one empty 1.5-spaced line (20.7pt)
+\vspace{26.7pt}
+{\bfseries\fontsize{12}{14.5}\selectfont \ReportAuthor\par}
+{\bfseries\fontsize{12}{14.5}\selectfont \ProgramName\ \SemesterName\par}
+{\bfseries\fontsize{12}{14.5}\selectfont Roll No: \SymbolNumber\par}
+{\bfseries\fontsize{12}{14.5}\selectfont \CampusFullName\par}

@@ -1,73 +1,69 @@
 % =====================================================================
 %  Cover and Title Page
-%  Text taken from data/documents/front.pdf page 1. Do not rewrite names,
-%  titles or the roll number (data/information/front_matter.md).
 %
-%  No page number is printed: the titlepage environment sets the page style
-%  to empty. The vertical spacing below is tuned so the whole cover fits on
-%  a single A4 page — verify after any edit:
-%     pdftotext -f 2 -l 2 main.pdf - | Select-Object -First 1
-%  must return the certificate page, not cover text.
+%  Verbatim from docs/zz/Internship_Report_Tirshana_Subedi.docx page 1
+%  (the approved Word draft; it supersedes data/documents/front.pdf for
+%  wording AND layout).  Names and numbers come from config/metadata.tex.
+%
+%  Layout facts copied from the Word file:
+%    - institution lines first, logo BELOW them (1.25in wide), then title
+%    - institution/title lines bold 16pt; "on"/"at" bold 14pt
+%    - "Submitted To:"/"Submitted By:" bold 13pt and underlined
+%    - the fulfillment line is italic at 1.25 line spacing
+%    - paragraph gaps are the Word "after" spacing (twips/20 = pt)
+%
+%  No page number: the titlepage environment sets the page style to empty.
+%  Verify after any edit: pdftotext -f 2 -l 2 main.pdf - | Select-Object
+%  -First 1  must return the certificate page, not cover text.
 % =====================================================================
 \begin{titlepage}
 \centering
-\setstretch{1.0}          % the cover is a display page, not body text
 
-\vspace*{0.25in}
+% --- institution block ------------------------------------------------
+{\bfseries\fontsize{16}{19.3}\selectfont \CampusFullName\par}
+\vspace{3pt}
+{\bfseries\fontsize{16}{19.3}\selectfont \UniversityName\par}
+\vspace{3pt}
+{\bfseries\fontsize{16}{19.3}\selectfont \InstituteName\par}
+\vspace{15pt}
 
-% University logo. The source file is only 156 x 181 px, so it must stay
-% small: about 1.0in wide. Optionally replace it with the higher-resolution
-% version embedded in front.pdf (305 x 354 px).
-\includegraphics[width=1.0in]{tribhuwan_university_logo.png}
+% --- university logo (305x354 px source, 1.25in wide as in Word) ------
+\includegraphics[width=1.25in]{\LogoFile}\par
+\vspace{15.5pt}
 
-\vspace{0.22in}
+% --- title block ------------------------------------------------------
+{\bfseries\fontsize{16}{19.3}\selectfont An Internship Report\par}
+\vspace{4.9pt}
+{\bfseries\fontsize{14}{16.9}\selectfont on\par}
+\vspace{1.2pt}
+{\bfseries\fontsize{16}{19.3}\selectfont ``\InternPosition''\par}
+\vspace{5.1pt}
+{\bfseries\fontsize{14}{16.9}\selectfont at\par}
+\vspace{1.1pt}
+{\bfseries\fontsize{16}{19.3}\selectfont \CompanyName\par}
+\vspace{28.8pt}
 
-{\bfseries\fontsize{14}{16}\selectfont Prithvi Narayan Campus\par}
-{\bfseries\fontsize{14}{16}\selectfont Tribhuvan University\par}
-{\bfseries\fontsize{14}{16}\selectfont Institute of Science and Technology\par}
+% --- submitted to -----------------------------------------------------
+% Word: single line spacing (no line= attr) on the two underlined labels
+{\setstretch{1}\bfseries\fontsize{13}{14.95}\selectfont\underline{Submitted To:}\par}
+\vspace{-2.6pt}
+{\bfseries\fontsize{12}{14.5}\selectfont \DepartmentFullName\par}
+{\fontsize{12}{14.5}\selectfont \ProgramName\ Program, \CampusFullName\par}
+{\fontsize{12}{14.5}\selectfont \CampusAddress\par}
+\vspace{11.8pt}
 
-\vspace{0.5in}
+% --- degree statement (italic, 1.25 line spacing in Word) -------------
+{\setstretch{1.25}\fontsize{12}{13.8}\selectfont\itshape
+In partial fulfillment of the requirements for the degree of \ProgramFullName\par}
+\vspace{18.6pt}
 
-{\bfseries\fontsize{16}{19}\selectfont An Internship Report\par}
-\vspace{0.06in}
-{\bfseries\fontsize{16}{19}\selectfont on\par}
-\vspace{0.14in}
-{\bfseries\fontsize{16}{19}\selectfont ``Mobile Application Developer Intern''\par}
-\vspace{0.06in}
-{\bfseries\fontsize{16}{19}\selectfont at\par}
-\vspace{0.14in}
-{\bfseries\fontsize{16}{19}\selectfont Power Gym Budibazar Pokhara\par}
-
-\vspace{0.42in}
-
-{\bfseries\fontsize{12}{14}\selectfont Submitted To:\par}
-\vspace{0.04in}
-{\fontsize{12}{14}\selectfont
-Department of Computer Science and Information Technology\par
-B.Sc. CSIT Program, Prithvi Narayan Campus\par
-Bhimkalipatan-1, Pokhara\par}
-
-\vspace{0.34in}
-
-{\fontsize{12}{14}\selectfont
-In partial fulfillment of the requirements for the degree of\par
-Bachelor of Science in Computer Science and Information Technology\par}
-
-\vspace{0.38in}
-
-{\bfseries\fontsize{12}{14}\selectfont Submitted By:\par}
-\vspace{0.04in}
-{\fontsize{12}{14}\selectfont
-Tirshana Subedi\par
-Roll No: 79011927\par
-% OPEN QUESTION: data/information/front_matter.md marks the roll number
-% "[CONFIRM: 79011927 ]". The cover page of front.pdf prints 79011927 while
-% its acknowledgement page prints 79011. Use the confirmed value here AND
-% in acknowledgement.tex, or nowhere.
-B.Sc. CSIT Program\par}
-
-\vspace{0.34in}
-
-{\bfseries\fontsize{12}{14}\selectfont October 2026\par}
+% --- submitted by -----------------------------------------------------
+{\setstretch{1}\bfseries\fontsize{13}{14.95}\selectfont\underline{Submitted By:}\par}
+\vspace{-3pt}
+{\bfseries\fontsize{12}{14.5}\selectfont \ReportAuthor\par}
+{\fontsize{12}{14.5}\selectfont Roll No: \SymbolNumber\par}
+{\fontsize{12}{14.5}\selectfont \ProgramName\ Program\par}
+\vspace{15pt}
+{\bfseries\fontsize{12}{14.5}\selectfont \SubmissionMonthYear\par}
 
 \end{titlepage}

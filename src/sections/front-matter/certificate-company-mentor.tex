@@ -4,45 +4,54 @@
 %  *** TEXT MISSING — THIS PAGE CANNOT BE COMPLETED YET ***
 %
 %  docs/guidelines/guidelines.md requires three certificate pages:
-%    (i)  Mentor's Recommendation from the Company
-%    (ii) Supervisor's Recommendation      -> certificate-supervisor.tex (done)
-%    (iii) Examiners' Approval Letter      -> letter-of-approval.tex (done)
+%    (i)  Mentor's Recommendation from the Company   -> this file
+%    (ii) Supervisor's Recommendation      -> certificate-supervisor.tex
+%    (iii) Examiners' Approval Letter      -> letter-of-approval.tex
 %
-%  data/documents/front.pdf contains only (ii) and (iii). The wording for
-%  (i) must be supplied, and the mentor is Mr. Krishna Subedi
-%  (data/information/company_information.md) or the gym management,
-%  Neeraj Tiwari (data/information/front_matter.md) — confirm which.
+%  Neither data/documents/front.pdf nor the approved Word draft
+%  (docs/zz/Internship_Report_Tirshana_Subedi.docx) contains this page —
+%  the Word file starts straight at the Supervisor's Recommendation.
+%  The wording must be supplied; the signatory is either the internship
+%  mentor Mr. Krishna Subedi (data/information/company_information.md)
+%  or the gym management, Neeraj Tiwari (data/information/front_matter.md)
+%  — OPEN QUESTION, confirm before filling in.
 %
-%  Until the text is supplied this file prints only the heading and a
-%  placeholder, so the build stays valid.
+%  The page is laid out like the other certificate pages (header, logo,
+%  underlined 14pt title) so it slots in correctly once the text arrives.
+%  This page carries roman page number i (it is the first certificate page).
 % =====================================================================
 \clearpage
-\begin{center}
-\includegraphics[width=1.1in]{tribhuwan_university_logo.png}\\[0.3in]
-{\bfseries Prithvi Narayan Campus}\\
-{\bfseries Tribhuvan University}\\
-{\bfseries Institute of Science and Technology}
-\end{center}
 
-\vspace{0.4in}
+{\centering
+{\bfseries\fontsize{16}{19.3}\selectfont \CampusFullName\par}
+\vspace{3pt}
+{\bfseries\fontsize{16}{19.3}\selectfont \UniversityName\par}
+\vspace{3pt}
+{\bfseries\fontsize{16}{19.3}\selectfont \InstituteName\par}
+\vspace{10pt}
+\includegraphics[width=1.04in]{\LogoFile}\par
+\vspace{12pt}
+{\setstretch{1}\bfseries\fontsize{14}{16.1}\selectfont\underline{MENTOR'S RECOMMENDATION}\par}
+\vspace{12pt}
 
-\begin{center}
-{\bfseries\fontsize{14}{17}\selectfont MENTOR'S RECOMMENDATION}
-\end{center}
-
-\vspace{0.2in}
+}
 
 % TODO: paste the approved wording here once received. It should follow the
 % same pattern as the supervisor's recommendation: who the report was
 % prepared by, what the intern did, and a recommendation for evaluation.
+{\itshape [Placeholder — the company mentor's recommendation has not yet
+been supplied. This page is required by the university guideline and must
+be replaced with the approved text before submission.]}
 
-\vspace{1.2in}
+\vspace{62.1pt}
+\vspace{13.8pt}
+\vspace{13.45pt}
+\noindent\rule{1.91in}{2.25pt}
+\vspace{13pt}
 
-\begin{flushright}
-\begin{tabular}{@{}c@{}}
-\rule{2.6in}{0.4pt}\\
 % OPEN QUESTION: confirm the signatory — internship mentor or gym management.
-\textit{Mentor}\\
-Power Gym Budibazar Pokhara
-\end{tabular}
-\end{flushright}
+{\bfseries\fontsize{12}{14.5}\selectfont \CompanyMentorTitle\ \CompanyMentor\par}
+\vspace{5.3pt}
+{\bfseries\fontsize{12}{14.5}\selectfont Internship Mentor\par}
+\vspace{5.45pt}
+{\bfseries\fontsize{12}{14.5}\selectfont \CompanyName\par}

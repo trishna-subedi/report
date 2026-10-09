@@ -1,43 +1,50 @@
 % =====================================================================
 %  Student's Declaration
-%  Text taken from data/documents/front.pdf page 4.
-%  Mentions the APA reference standard, as the guidelines require.
+%
+%  Verbatim from docs/zz/Internship_Report_Tirshana_Subedi.docx page 4.
+%  Layout facts from the Word file:
+%    - header (bold 16pt) + TU logo at 1.04in, exactly as the certificate pages
+%    - title bold 14pt UNDERLINED, centred, 12pt below the logo
+%    - three justified body paragraphs, 1.5 spacing, 6pt apart
+%    - signature block is LEFT aligned, all lines 12pt, 1.5 spacing
+%      ("Submitted By:" bold but NOT underlined here, unlike the cover)
 % =====================================================================
 \clearpage
-\begin{center}
-\includegraphics[width=1.1in]{tribhuwan_university_logo.png}\\[0.3in]
-{\bfseries Prithvi Narayan Campus}\\
-{\bfseries Tribhuvan University}\\
-{\bfseries Institute of Science and Technology}
-\end{center}
 
-\vspace{0.4in}
+{\centering
+{\bfseries\fontsize{16}{19.3}\selectfont \CampusFullName\par}
+\vspace{3pt}
+{\bfseries\fontsize{16}{19.3}\selectfont \UniversityName\par}
+\vspace{3pt}
+{\bfseries\fontsize{16}{19.3}\selectfont \InstituteName\par}
+\vspace{10pt}
+\includegraphics[width=1.04in]{\LogoFile}\par
+\vspace{17.6pt}
+{\setstretch{1}\bfseries\fontsize{14}{16.1}\selectfont\underline{STUDENT'S DECLARATION}\par}
+\vspace{6.4pt}
 
-\begin{center}
-{\bfseries\fontsize{14}{17}\selectfont STUDENT'S DECLARATION}
-\end{center}
+}
 
-\vspace{0.2in}
+I hereby declare that the internship report entitled ``Mobile Application Developer\\
+Intern'', submitted to the \InstituteName, \UniversityName, in\\
+partial fulfillment of the requirements for the degree of Bachelor of Science in\\
+Computer Science and Information Technology (\ProgramName), is the result of work
+undertaken by me during my internship at \CompanyName.
+\vspace{6pt}
 
-I hereby declare that the internship report entitled ``Mobile Application Developer Intern'',
-submitted to the Institute of Science and Technology, Tribhuvan University, in partial fulfillment of
-the requirements for the degree of Bachelor of Science in Computer Science and Information Technology
-(B.Sc. CSIT), is the result of work undertaken by me during my internship at Power Gym Budibazar
-Pokhara.
+This report has not been submitted to any other institution for the award of any degree\\
+or diploma. I have properly acknowledged and cited all the sources of information used\\
+in this report in accordance with the APA reference standard.
+\vspace{6pt}
 
-This report has not been submitted to any other institution for the award of any degree or diploma.
-I have properly acknowledged and cited all the sources of information used in this report in
-accordance with the APA reference standard.
+I further declare that the tasks presented in this report are genuine and were completed\\
+during the internship period at \CompanyName.
 
-I further declare that the tasks presented in this report are genuine and were completed during the
-internship period at Power Gym Budibazar Pokhara.
-
-\vspace{1.2in}
-
-\noindent
-\begin{tabular}{@{}l@{}l@{}}
-Submitted By: & Tirshana Subedi\\
-              & Roll No: 79011927\\
-              & B.Sc. CSIT Program\\
-              & Prithvi Narayan Campus, Pokhara
-\end{tabular}
+% --- signature block ----------------------------------------------------
+% Word: 6pt paragraph gap + one empty 1.5-spaced line (20.7pt)
+\vspace{26.7pt}
+\textbf{\fontsize{12}{14.5}\selectfont Submitted By:}\par
+{\fontsize{12}{14.5}\selectfont \ReportAuthor\par}
+{\fontsize{12}{14.5}\selectfont Roll No: \SymbolNumber\par}
+{\fontsize{12}{14.5}\selectfont \ProgramName\ Program\par}
+{\fontsize{12}{14.5}\selectfont \CampusFullName, Pokhara\par}

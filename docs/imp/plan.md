@@ -298,3 +298,49 @@ Chapter 1 plan has been established according to `docs/guidelines/guidelines.md`
   - 1.4.1 Scope: Cross-platform React Native / Expo client (24 screens, 5 tabs, modular token design system, offline-first SQLite/Drizzle store) and NestJS backend-v2 modules.
   - 1.4.2 Limitations: 12-week academic timeline, single-contributor intern scope, simulator-only verification without physical device silicon/haptic testing, and mock/local authentication without external cloud OAuth secrets.
 - 1.5 Report Organization: Narrative overview of Chapters 1 to 4, references, and appendices.
+
+## 13. Front matter made pixel-perfect to the Word draft (docs/zz)
+
+The approved Word file `docs/zz/Internship_Report_Tirshana_Subedi.docx` (rendered to
+`reference_front.pdf` for measurement) supersedes `data/documents/front.pdf` for **layout** as well
+as wording. Target: every word of the five reference pages within 2 pt of the reference in both
+axes. Result: **670/670 words matched, 0 outliers**, `BUILD OK`, 38 pages.
+
+Method (repeatable):
+
+1. Render the docx to PDF (Word COM), extract per-word bboxes with `pdftotext -bbox`.
+2. Map ref page p to our page p (cover) or p+1 (pages 2-5, because our build has the extra
+   mentor certificate the docx lacks), match words by text, report `|dy| > 2`.
+3. Tune the explicit `\vspace` between blocks until all residuals are within tolerance.
+
+Findings that must not be rediscovered:
+
+- **Calibrated spacing model**: paragraph baseline distance = `\baselineskip` + explicit
+  `\vspace`. Word-1.5 lines are `\fontsize{S}{S*1.2083}` under the global `\setstretch{1.43}`;
+  Word single lines are `{\setstretch{1}\fontsize{S}{S*1.15}...}`; Word `line=360` = 1.5,
+  `line=None` = single. Docx "after" twips/20 = pt.
+- **Line breaks are frozen**: every front-matter body paragraph carries hard `\\` at the exact
+  points Word breaks. Greedy TeX and greedy Word diverge on at least one supervisor line, so
+  natural breaks are not reliable. Two bugs bit here: a *single* trailing backslash is not a line
+  break, and `\\` + an accidental blank line adds a phantom 20.7 pt line (this pushed the
+  supervisor and acknowledgement onto an extra page each).
+- Break positions must come from the reference render, not from intuition — one break was placed
+  inside `\ReportAuthor` where Word actually breaks naturally after "Tirshana".
+- `\begin{center}`/`\end{center}` and `\textbf{...\par}` inject extra vertical space; use grouped
+  `{\centering...\par}` and `{\bfseries...\par}`.
+- Front matter sets `\hyphenpenalty=10000` (Word does not hyphenate there; hyphenation shifts
+  justified breaks) and `\parskip=0`; `main.tex` restores 50/100 and `6pt` before Chapter 1.
+- Letter body matched with *natural* greedy breaks (identical font and text width), but it is
+  still forced with `\\` so it stays matched if anything upstream moves.
+- The supervisor signature gap needed `\vspace{47.8pt}` where the naive Word empty-line model
+  said 62.1 pt; empirical tuning wins.
+- Front left margin is **1.5 in** (docx) rather than the guideline's 1.25 in — deviation to flag;
+  roman page numbers were kept per guideline although the docx shows none.
+
+Wiring: `main.tex` now inputs `../config/preamble`, `../config/metadata`, `../config/macros`;
+`\graphicspath` lives in `preamble.tex`. `metadata.tex` carries `\LogoFile`, `\SymbolNumber{79011927}`,
+`\SubmissionMonthYear{October 2026}` and the signatory macros.
+
+Build script: the preflight now reads `\graphicspath` across the whole `\input` graph (brace-group
+groups only, so a commented path cannot clobber it) and expands `\newcommand` macros such as
+`\LogoFile` before checking image paths.

@@ -216,30 +216,49 @@ if (-not $SkipChecks) {
     }
     Add-TexFile -Path $entry -From $File
 
-    # graphicspath from the entry file, parsed with balanced braces so that
-    # unrelated braces later on the same line cannot corrupt the result.
-    $mainText = Get-Content -LiteralPath $entry -Raw
+    # graphicspath may live in the entry file or any file it inputs (the
+    # preamble is \input from ../config/), so search the whole graph. Parsed
+    # with balanced braces so unrelated braces later on the line cannot
+    # corrupt the result; only brace groups that look like directory entries
+    # (they end with a slash) count, so a stray mention of the command in a
+    # comment cannot clobber the real path list. The last definition wins,
+    # as in LaTeX.
     $gpDirs = @()
-    $inner = Get-BracedContent -Text $mainText -Marker '\graphicspath'
-    if ($inner) {
-        $gpDirs = @([regex]::Matches($inner, '\{([^{}]+)\}') |
-                    ForEach-Object { $_.Groups[1].Value.Trim().TrimEnd('/') } |
-                    Where-Object { $_ -ne '' })
+    foreach ($f in $fileSet) {
+        $inner = Get-BracedContent -Text (Get-Content -LiteralPath $f -Raw) -Marker '\graphicspath'
+        if ($inner -and $inner -match '\{[^{}]*/\}') {
+            $gpDirs = @([regex]::Matches($inner, '\{([^{}]+)\}') |
+                        ForEach-Object { $_.Groups[1].Value.Trim().TrimEnd('/') } |
+                        Where-Object { $_ -ne '' })
+        }
+    }
+
+    # simple macros (\newcommand{\LogoFile}{tu_logo.png}) used in image paths
+    $macros = @{}
+    foreach ($f in $fileSet) {
+        foreach ($m in [regex]::Matches((Get-Content -LiteralPath $f -Raw),
+                 '\\newcommand\{?(\\[A-Za-z@]+)\}?\s*\{([^{}]*)\}')) {
+            $macros[$m.Groups[1].Value] = $m.Groups[2].Value
+        }
     }
 
     # images referenced by the files in this build only
     $images = @($fileSet | ForEach-Object {
         [regex]::Matches((Get-Content -LiteralPath $_ -Raw),
                          '\\includegraphics(?:\[[^\]]*\])?\{([^}]+)\}')
-    } | ForEach-Object { $_.Groups[1].Value } | Sort-Object -Unique)
+    } | ForEach-Object { $_.Groups[1].Value })
 
-    foreach ($img in $images) {
+    foreach ($img in @($images | Sort-Object -Unique)) {
+        $resolved = $img
+        foreach ($k in $macros.Keys) {
+            if ($resolved.Contains($k)) { $resolved = $resolved.Replace($k, $macros[$k]) }
+        }
         $found = $false
         foreach ($d in @('.') + $gpDirs) {
-            if (Test-Path -LiteralPath (Join-Path $texRoot (Join-Path $d $img))) { $found = $true; break }
+            if (Test-Path -LiteralPath (Join-Path $texRoot (Join-Path $d $resolved))) { $found = $true; break }
         }
         if (-not $found) {
-            $preflightErrors += "image not found: $img  (searched . and: $($gpDirs -join ', '))"
+            $preflightErrors += "image not found: $resolved  (from $img)  (searched . and: $($gpDirs -join ', '))"
         }
     }
     if ($images.Count -gt 0) {
