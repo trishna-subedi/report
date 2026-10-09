@@ -8,7 +8,167 @@
 % =====================================================================
 \clearpage
 \appendix
+% APPENDIX is an unnumbered heading (like REFERENCES) — the appendix has no
+% numbered chapter. The counter is stepped silently so sections and figures
+% number as A.1/A.2 with no "CHAPTER A" heading and no blank page.
+\chapter*{APPENDIX}
 \addcontentsline{toc}{chapter}{APPENDIX}
 \addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}
+\refstepcounter{chapter}
+\label{app:screenshots}
 
-\input{appendix/appendix-a-screenshots}
+This appendix presents the user interface screens of the Alcedo mobile application across its five primary navigation tabs and core functional modules. All sixteen representative interface screens are presented three per row in Figures~\ref{fig:app_screens_part1} to~\ref{fig:app_screens_part3}.
+
+\section{Screen Walkthrough}
+The application interface encompasses twenty-four screens organized across five navigation tabs:
+\begin{itemize}
+    \item \textbf{Workout and Home:} Home dashboard with daily activity rings, assigned workout programs, recovery status, and live set logging with rest timers.
+    \item \textbf{Social Feed:} Community timeline sharing completed sessions, training achievements, and weekly workout challenges.
+    \item \textbf{Exercise Library:} Comprehensive searchable catalog filtered by muscle group and equipment type, custom exercise creation, and exercise execution details.
+    \item \textbf{History:} Monthly training calendar with visual workout indicators and historical session inspection.
+    \item \textbf{Stats and Analytics:} Longitudinal training metrics including 13-week consistency heatmaps, strength trend progression curves, and muscle group load distribution.
+    \item \textbf{AI Assistant and Planner:} Automated routine generator, deload and recovery management, and conversational Alcedo Coach chat.
+    \item \textbf{Settings:} Theme selection (Light, Dark, OLED), hardware diagnostics, and local JSON backup and restore tools.
+\end{itemize}
+
+\clearpage
+
+\begin{figure}[p]
+    \centering
+    % Row 1: Home Dashboard & Activity (from p1)
+    \begin{minipage}[b]{0.31\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{app_home_activity.jpg}\\[3pt]
+        {\footnotesize\textbf{(a) Activity \& Daily Session}}
+    \end{minipage}\hfill
+    \begin{minipage}[b]{0.31\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{app_home_programs.jpg}\\[3pt]
+        {\footnotesize\textbf{(b) Programs \& Recovery}}
+    \end{minipage}\hfill
+    \begin{minipage}[b]{0.31\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{app_live_workout.jpg}\\[3pt]
+        {\footnotesize\textbf{(c) Live Workout Execution}}
+    \end{minipage}
+
+    \vspace{10pt}
+
+    % Row 2: Workout Session & Social Feed
+    \begin{minipage}[b]{0.31\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{app_workout_session.jpg}\\[3pt]
+        {\footnotesize\textbf{(d) Session Tracking}}
+    \end{minipage}\hfill
+    \begin{minipage}[b]{0.31\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{app_feed_timeline.jpg}\\[3pt]
+        {\footnotesize\textbf{(e) Social Media Timeline}}
+    \end{minipage}\hfill
+    \begin{minipage}[b]{0.31\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{app_feed_challenge.jpg}\\[3pt]
+        {\footnotesize\textbf{(f) Challenge \& Sharing}}
+    \end{minipage}
+
+    \caption{Application Screens: Home Dashboard, Workout Tracking, and Social Feed}
+    \label{fig:app_screens_part1}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]
+    \centering
+    % Row 3: Exercise Library & Calendar
+    \begin{minipage}[b]{0.31\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{app_exercise_library.jpg}\\[3pt]
+        {\footnotesize\textbf{(a) Exercise Library Search}}
+    \end{minipage}\hfill
+    \begin{minipage}[b]{0.31\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{app_exercise_creator.jpg}\\[3pt]
+        {\footnotesize\textbf{(b) Custom Exercise Creator}}
+    \end{minipage}\hfill
+    \begin{minipage}[b]{0.31\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{app_history_calendar.jpg}\\[3pt]
+        {\footnotesize\textbf{(c) Training History Calendar}}
+    \end{minipage}
+
+    \vspace{10pt}
+
+    % Row 4: Performance Analytics
+    \begin{minipage}[b]{0.31\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{app_stats_consistency.jpg}\\[3pt]
+        {\footnotesize\textbf{(d) 13-Week Consistency}}
+    \end{minipage}\hfill
+    \begin{minipage}[b]{0.31\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{app_stats_trends.jpg}\\[3pt]
+        {\footnotesize\textbf{(e) Strength Trends}}
+    \end{minipage}\hfill
+    \begin{minipage}[b]{0.31\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{app_stats_muscle_load.jpg}\\[3pt]
+        {\footnotesize\textbf{(f) Muscle Group Load}}
+    \end{minipage}
+
+    \caption{Application Screens: Exercise Library, History, and Performance Analytics}
+    \label{fig:app_screens_part2}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]
+    \centering
+    % Row 5: AI Planner & Coach
+    \begin{minipage}[b]{0.31\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{app_ai_planner_setup.jpg}\\[3pt]
+        {\footnotesize\textbf{(a) AI Planner Setup}}
+    \end{minipage}\hfill
+    \begin{minipage}[b]{0.31\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{app_ai_planner_recovery.jpg}\\[3pt]
+        {\footnotesize\textbf{(b) Recovery Management}}
+    \end{minipage}\hfill
+    \begin{minipage}[b]{0.31\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{app_ai_coach.jpg}\\[3pt]
+        {\footnotesize\textbf{(c) AI Coach Assistant}}
+    \end{minipage}
+
+    \vspace{10pt}
+
+    % Row 6: Settings (centered)
+    \begin{minipage}[b]{0.31\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{app_settings.jpg}\\[3pt]
+        {\footnotesize\textbf{(d) Settings \& Preferences}}
+    \end{minipage}
+
+    \caption{Application Screens: AI Planner, Coach Assistant, and Settings}
+    \label{fig:app_screens_part3}
+\end{figure}
+
+\clearpage
+
+\section{Interface Design and Theming}
+The sixteen screens presented in this appendix illustrate the application's comprehensive mobile design system rendered in dark display mode. Key interface characteristics implemented across these screens include:
+\begin{itemize}
+    \item \textbf{Design Tokens:} Unified color palettes, consistent 8-point spatial grid scales, and typographic hierarchies applied across all 82 modular components.
+    \item \textbf{Theming Support:} Dynamic runtime switching between Light, Dark, and high-contrast true-black OLED modes without requiring layout recalculation or screen reload.
+    \item \textbf{Touch Ergonomics:} Strict minimum touch target sizing (48~dp) and generous hit slop areas engineered for gym-floor usability during active workout sessions.
+    \item \textbf{Data Density:} Card-based modular layouts providing clear visual separation between session controls, metric graphs, and historical logs.
+\end{itemize}
+
+\subsection{Navigation and Workflow Integration}
+The user interface follows a predictable five-tab hierarchy powered by Expo Router's file-based routing mechanism. Primary workflows transition smoothly between high-level summaries and granular tracking:
+\begin{itemize}
+    \item \textbf{Session Flow:} The Home Dashboard launcher transitions directly into the live set logging interface, updating local SQLite tables in real time via transactional writes.
+    \item \textbf{Catalog Navigation:} The Exercise Library integrates multi-criteria filtering by anatomical muscle group and equipment type, linking directly into exercise history and custom creation views.
+    \item \textbf{Analytics Feedback:} Workout completion triggers background aggregation recalculations, updating consistency heatmaps, volume tonnage charts, and progression curves immediately.
+    \item \textbf{AI and Preferences:} The AI Planner configuration directly synchronizes with recovery management and conversational coaching sessions, ensuring training prescriptions adapt dynamically to recorded member fatigue.
+\end{itemize}

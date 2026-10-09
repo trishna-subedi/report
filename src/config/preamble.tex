@@ -155,6 +155,8 @@
 % ---------------------------------------------------------------------
 \usepackage{xcolor}
 \usepackage{tikz}            % certificate frame drawn on the mentor page only
+\usetikzlibrary{calc}
+\usepackage{eso-pic}         % background frame on the mentor certificate page
 \usepackage{letterspace}     % \textls letterspacing for the certificate title
 \usepackage{listings}
 \lstset{
@@ -166,6 +168,44 @@
   numbers=left,
   numberstyle=\tiny\color{gray},
   showstringspaces=false
+}
+
+% ---------------------------------------------------------------------
+% 8b. Mentor certificate — colours and official stamp placeholder
+%     Design from suggestions.md, fixed: \OfficialStampName is "Power Gym"
+%     (two words, matching data/information/company_information.md and
+%     \CompanyName), and the page uses serif \bfseries only so the build
+%     keeps embedding Times New Roman exclusively (no \sffamily).
+% ---------------------------------------------------------------------
+\providecolor{certNavy}{RGB}{15,36,64}
+\providecolor{certGold}{RGB}{176,138,58}
+\providecolor{certInk}{RGB}{32,38,48}
+\providecolor{certSlate}{RGB}{84,94,105}
+
+% Exact wording used in the official stamp section.
+\providecommand*{\OfficialStampName}{Power Gym}
+
+% Official stamp placeholder (empty dashed box — left blank for stamping)
+\providecommand*{\OfficialStampPlaceholder}{%
+  \begin{tikzpicture}[baseline=-1.125cm]
+    \node[
+      draw=certSlate!80,
+      line width=0.8pt,
+      dash pattern=on 2.4pt off 2.0pt,
+      rounded corners=4pt,
+      minimum width=3.35cm,
+      minimum height=2.25cm,
+      inner sep=0pt
+    ] (stampbox) {};
+    \draw[
+      certSlate!35,
+      line width=0.4pt,
+      rounded corners=2.8pt
+    ]
+      ($(stampbox.north west)+(0.15cm,-0.15cm)$)
+      rectangle
+      ($(stampbox.south east)+(-0.15cm,0.15cm)$);
+  \end{tikzpicture}%
 }
 
 % ---------------------------------------------------------------------
